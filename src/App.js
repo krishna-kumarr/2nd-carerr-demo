@@ -9,7 +9,7 @@ function App() {
   return (
     // <Login/>    
     <Routes>
-      <Route path="/" element={<ChangePassword/>}/>
+      <Route path="/" element={<ResetPassword/>}/>
     </Routes>
   );
 }

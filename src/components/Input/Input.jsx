@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = ({type,className, placeHolder, ariaLabel, testId, required, name, functionName}) => {
+const Input = ({type,className, placeHolder, ariaLabel, testId, required, name, functionOnchange, functionOnkeyDown, disabled}) => {
   return (
     <input
     type={type}
@@ -9,8 +9,10 @@ const Input = ({type,className, placeHolder, ariaLabel, testId, required, name, 
     aria-label={ariaLabel}      
     data-testid={testId}          
     required={required} 
-    onChange={functionName}
+    onChange={functionOnchange}
+    onKeyDown={functionOnkeyDown}
     name={name}
+    disabled={disabled === true ? "disabled" : null}
   />  
   )
 }

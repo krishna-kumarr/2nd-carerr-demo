@@ -7,19 +7,18 @@ import { PiEnvelopeSimpleOpenThin } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 
 const ResetPasswordForm = () => {
-  const pageNavigate = useNavigate();
+  // const pageNavigate = useNavigate();
   const [err, setErr] = useState(false)
   const [ErrMessage,setErrMessage] = useState('')
   const [usersDetails, setUsersDetails] = useState({
     email_id: '',
   })
 
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUsersDetails({ ...usersDetails, [name]: value });
-  };
-
+  const handlekeydown = (e) =>{
+    if(e.key === "Enter"){
+      e.preventDefault()
+    }
+  }
 
   const handleSubmit = () => {
     if (usersDetails.email_id === '') {
@@ -58,9 +57,10 @@ const ResetPasswordForm = () => {
           className="form-control login-input border border-0 rounded-3"
           placeHolder="Email ID"
           ariaLabel="email"
-          testId="reset-email-id"
+          testId="reset-email"
           name="email_id"
-          functionName={handleChange}
+          functionOnchange={(e)=>setUsersDetails({...usersDetails,[e.target.name]: e.target.value})}
+          functionOnkeyDown={handlekeydown}
         />
       </div>
 
@@ -79,9 +79,9 @@ const ResetPasswordForm = () => {
         <Button
           className="btn btn-lg  btn-login fw-bold mb-2"
           title="Sign in"
-          // buttonType="button"
-          testId="reset-email-id"
-          // functionName={handleSubmit}
+          buttonType="button"
+          testId="reset-button"
+          functionOnchange={handleSubmit}
         />
       </div>
     </form>

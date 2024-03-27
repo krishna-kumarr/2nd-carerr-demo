@@ -21,10 +21,11 @@ const LoginForm = () => {
 
   const pageNavigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setLoginDetails({ ...LoginDetails, [name]: value });
-  };
+  const handlekeydown = (e) =>{
+    if(e.key === "Enter"){
+      e.preventDefault()
+    }
+  }
 
   const handleSubmit = async () => {
     if (LoginDetails.email_id === "" || LoginDetails.password === "") {
@@ -71,7 +72,8 @@ const LoginForm = () => {
           ariaLabel="email"
           testId="login-email-id"
           name="email_id"
-          functionName={handleChange}
+          functionOnchange={(e)=> setLoginDetails({ ...LoginDetails, [e.target.name]: e.target.value })}
+          functionOnkeyDown={handlekeydown}
         />
       </div>
 
@@ -97,7 +99,8 @@ const LoginForm = () => {
           placeHolder="Password"
           ariaLabel="password"
           testId="login-pass"
-          functionName={handleChange}
+          functionOnchange={(e)=> setLoginDetails({ ...LoginDetails, [e.target.name]: e.target.value })}
+          functionOnkeyDown={handlekeydown}
           name="password"
         />
 
@@ -132,7 +135,7 @@ const LoginForm = () => {
               title="Sign in"
               buttonType="button"
               testId="login-button"
-              functionName={handleSubmit}
+              functionOnchange={handleSubmit}
             />
         }
 
