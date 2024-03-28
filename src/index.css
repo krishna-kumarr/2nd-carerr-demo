@@ -343,3 +343,168 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 1.1rem;
   font-weight: 500;
 } */
+
+
+
+
+
+
+
+
+
+
+
+/* krishna kumar css edits */
+
+/* newly added job description component(jobDescription.jsx) css */
+.job-description{
+  color: #606060ce;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.2px;
+  word-spacing: 2px;
+  }
+  .company-details-icon{
+  color: #020101;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  }
+  .dashboard-responsibility-ul{
+  color: #020101;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  }
+  .dashboard-skills-ul{
+  color: #020101;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  }
+  .dashboard-job-post-icons{
+  color: #020101;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  }
+  .dashboard-additional-information-ul{
+  color: #020101;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  }
+  .job-heading{
+  font-size: 1.3rem;
+  font-weight: 700;
+  }
+  .job-posted-on{
+  color: #020101;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  }
+  
+  /* newly added job card component(jobCard.jsx) css */
+  .job-card-component-heading{
+  font-weight: 700;
+  }
+  .job-card-description{
+    color: #606060ce;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0.2px;
+    word-spacing: 2px;
+  }
+  .job-card-posted-time{
+  color: #020101;
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  }
+  .card-company-details-icon{
+  color: #020101;
+  }
+  
+  /* newly added job workspace component(jobworkspace.jsx) css */
+  .filter-results{
+  font-size: 0.9rem;
+  }
+  
+  /* newly added job card component(jobCard.jsx) css */
+  .filter-section{
+  font-size: 0.9rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  }
+  .filter-section.form-select option{
+  padding: 15px!important;
+  }
+  .filter-section.form-control:focus {
+  border-color: #020101;;
+  outline: 0;
+  box-shadow: none;
+  }
+  .job-filter-heading span{
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  }
+  .job-filter-sub-headings{
+  font-size: 1rem;
+  font-weight:700;
+  line-height: 1.8rem;
+  }
+  .form-check-label{
+  font-size: 0.9rem;
+  }
+  
+  /* newly added filter method component(filtermethod.jsx) css */
+  .filter-menus{
+  padding: 0.13rem 0;
+  }
+  
+  /* width for header seeting-row-height */
+  :root{
+  --nav-height:4rem;
+  --dashboard-menu:5rem;
+  }
+  .navbar-height{
+  height: var(--nav-height);
+  }
+  .setting-row-height{
+  height: calc(100vh - (var(--nav-height) + var(--dashboard-menu)));
+  }
+  ::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  }
+  
+  /* job description sticky height */
+  .JobDescription-sticky-top-height{
+  top: 0;
+  padding: 1.5rem;
+  }
+
+
+/* professional homepage background color  */
+.homePage-backgroundColor{
+  background-color: #f3f6f9;
+}
+
+
+/* navlink active  */
+.navigation-link-active{
+  padding: 0 2rem;
+}
+.navigation-link-active a{
+  text-decoration: none;
+  color: gray;
+}
+.navigation-link-active a.active {
+  border-bottom: 3px solid rgba(255,193,7,1);
+  font-weight: 600;
+}

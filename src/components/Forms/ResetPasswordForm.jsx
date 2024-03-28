@@ -7,7 +7,7 @@ import { PiEnvelopeSimpleOpenThin } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 
 const ResetPasswordForm = () => {
-  // const pageNavigate = useNavigate();
+  const pageNavigate = useNavigate();
   const [err, setErr] = useState(false)
   const [ErrMessage,setErrMessage] = useState('')
   const [usersDetails, setUsersDetails] = useState({
@@ -25,6 +25,7 @@ const ResetPasswordForm = () => {
       setErr(true)
     } else {
       if (usersDetails.email_id.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
+        pageNavigate("/reset-password")
         setErr(false)
       } else {
         setErrMessage("Please enter a valid mail")
@@ -78,7 +79,7 @@ const ResetPasswordForm = () => {
       <div className="d-grid mt-3">
         <Button
           className="btn btn-lg  btn-login fw-bold mb-2"
-          title="Sign in"
+          title="Reset password"
           buttonType="button"
           testId="reset-button"
           functionOnchange={handleSubmit}

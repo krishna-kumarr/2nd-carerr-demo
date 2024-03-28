@@ -3,6 +3,7 @@ import FormInput from "../Input/FormInput";
 import Input from "../Input/Input";
 const ProfessionalSignUpForm = () => {
   return (
+    
     <form class="row signup-forms">
       <FormInput
         formInputDivClassName="col-md-6 mt-2"

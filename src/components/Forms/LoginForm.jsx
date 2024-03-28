@@ -140,7 +140,7 @@ const LoginForm = () => {
         }
 
         <div className="text-end">
-          <Link className="small" to={'/forgot_password'} data-testid="forgot-password">
+          <Link className="small" to={'/forgot-password'} data-testid="forgot-password">
             Forgot password?
           </Link>
         </div>

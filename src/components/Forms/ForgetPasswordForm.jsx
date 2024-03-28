@@ -30,6 +30,7 @@ const ForgetPasswordForm = () => {
     } else {
       if (userDetails.password === userDetails.confirmPassword) {
         setErr(false);
+        pageNavigate("/home/all")
       } else {
         setErrMsg("password and confirm password are not matching")
         setErr(true);
@@ -139,7 +140,7 @@ const ForgetPasswordForm = () => {
       <div className="d-grid mt-3">
         <Button
           className="btn btn-lg btn-login fw-bold mb-2"
-          title="Sign in"
+          title="Submit"
           testId="forgot-submit-button"
           buttonType="button"
           functionOnchange={handleSubmitData}

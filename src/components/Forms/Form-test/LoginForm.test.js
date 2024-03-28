@@ -5,6 +5,7 @@ import { act } from 'react-dom/test-utils';
 import '@testing-library/jest-dom'
 import React from 'react';
 import App from "../../../App";
+import Login from "../../../views/common/Login";
 
 describe("Login Test cases", () => {
 
@@ -20,7 +21,7 @@ describe("Login Test cases", () => {
  
 
   test("Checking fields are available", () => { 
-    renderWithRouter(<App />)
+    renderWithRouter(<Login />)
  
     expect(screen.getByText(/Sign In to Second Careers/i)).toBeInTheDocument();
     expect(screen.getByTestId('login-email-id')).toBeInTheDocument();
@@ -31,7 +32,7 @@ describe("Login Test cases", () => {
 
 
   test("should set username and password to be empty", () => {
-    renderWithRouter(<App />) 
+    renderWithRouter(<Login />) 
 
     expect(screen.getByTestId('login-email-id').value).toBe("")
     expect(screen.getByTestId('login-pass').value).toBe("")
@@ -40,7 +41,7 @@ describe("Login Test cases", () => {
 
 
   test("checking fields as empty when clicking submit button", () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<Login />)
  
     fireEvent.click(screen.getByTestId("login-button")); 
 
@@ -56,7 +57,7 @@ describe("Login Test cases", () => {
 
 
   test("username field is empty error message when clicking submit button", () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<Login />)
 
     fireEvent.change(screen.getByTestId('login-pass'), {
       target: { value: "password@123" },
@@ -74,7 +75,7 @@ describe("Login Test cases", () => {
 
 
   test("password field is empty error message when clicking submit button", () => {
-    renderWithRouter(<App />) 
+    renderWithRouter(<Login />) 
 
     fireEvent.change(screen.getByTestId('login-email-id'), {
       target: { value: "second-carrear" },
@@ -142,7 +143,7 @@ describe("Login Test cases", () => {
     expect(screen.getByTestId('disable-login-button')).toBeInTheDocument()
     expect(screen.getByTestId('disable-login-button')).toBeDisabled()
     
-    await waitFor(()=>expect(window.location.href).toBe('http://localhost/'))
+    await waitFor(()=>expect(window.location.href).toBe('http://localhost/home'))
   });
 
  
@@ -155,7 +156,7 @@ describe("Login Test cases", () => {
       fireEvent.click(screen.getByTestId("forgot-password"));
     });
     await waitFor(() =>
-      expect(window.location.href).toBe("http://localhost/forgot_password")
+      expect(window.location.href).toBe("http://localhost/forgot-password")
     );
   });
 });

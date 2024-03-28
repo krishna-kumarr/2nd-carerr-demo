@@ -9,7 +9,7 @@ import App from "../../../App";
 describe("Login Test cases", () => {
 
   //global router
-  const renderWithRouter = (ui, { route = '/' } = {}) => {
+  const renderWithRouter = (ui, { route = '/reset-password' } = {}) => {
     window.history.pushState({}, 'Test page', route)
 
     return {
@@ -17,52 +17,88 @@ describe("Login Test cases", () => {
       ...render(ui, { wrapper: BrowserRouter }),
     }
   }
-  
-  test("check availability",()=>{
-    renderWithRouter(<App/>)
 
-    expect(screen.getByText(/Change your Password ?/i)).toBeInTheDocument();
-    expect(screen.getByTestId("reset-email")).toBeInTheDocument();
-    expect(screen.getByTestId("reset-button")).toBeInTheDocument();
+
+  test("check availability", () => {
+    renderWithRouter(<App />)
+
+    expect(screen.getByText(/Change your Password/i)).toBeInTheDocument();
+    expect(screen.getByTestId("forgot-email")).toBeInTheDocument();
+    expect(screen.getByTestId("forgot-password")).toBeInTheDocument();
+    expect(screen.getByTestId("forgot-confirm-password")).toBeInTheDocument();
+    expect(screen.getByTestId("forgot-submit-button")).toBeInTheDocument();
   })
 
 
-  test("checking email filed is empty",()=>{
-    renderWithRouter(<App/>)
+  test("check availability", () => {
+    renderWithRouter(<App />)
 
-    expect(screen.getByTestId("reset-email").value).toBe('');
+    expect(screen.getByText(/Change your Password/i)).toBeInTheDocument();
+    expect(screen.getByTestId("forgot-email")).toBeInTheDocument();
+    expect(screen.getByTestId("forgot-email")).toBeDisabled();
+    expect(screen.getByTestId("forgot-password").value).toBe('');
+    expect(screen.getByTestId("forgot-confirm-password").value).toBe('');
   })
 
 
-  test("checking email filed value updating",()=>{
-    renderWithRouter(<App/>)
+  test("password required", () => {
+    renderWithRouter(<App />)
+    fireEvent.change(screen.getByTestId("forgot-password"), { target: { value: "password@123" } })
+    expect(screen.getByTestId("forgot-password").value).toBe('password@123');
+    expect(screen.getByTestId("forgot-confirm-password").value).toBe('');
 
-    fireEvent.change(screen.getByTestId("reset-email"),{target : {value :'abc@gmail.com'}})
-    expect(screen.getByTestId("reset-email").value).not.toBe('');
+    act(() => {
+      fireEvent.click(screen.getByTestId("forgot-submit-button"))
+    })
+    expect(screen.getByText(/Please enter confirm password./i)).toBeInTheDocument();
   })
 
 
-  test("checking inivalid email",()=>{
-    renderWithRouter(<App/>)
+  test("password required", () => {
+    renderWithRouter(<App />)
 
-    fireEvent.change(screen.getByTestId("reset-email"),{target : {value :'abc'}})
-    expect(screen.getByTestId("reset-email").value).not.toBe('');
-    act(()=>{
-      fireEvent.click(screen.getByTestId("reset-button"));  
+    expect(screen.getByTestId("forgot-password").value).toBe('');
+    fireEvent.change(screen.getByTestId("forgot-confirm-password"), { target: { value: "password@123" } })
+    expect(screen.getByTestId("forgot-confirm-password").value).not.toBe('');
+
+    act(() => {
+      fireEvent.click(screen.getByTestId("forgot-submit-button"))
+    })
+    expect(screen.getByText(/Please enter your new password./i)).toBeInTheDocument();
+  })
+
+
+  test("password and confirm password does not matching", () => {
+    renderWithRouter(<App />)
+
+    fireEvent.change(screen.getByTestId("forgot-password"), { target: { value: "password" } })
+    expect(screen.getByTestId("forgot-password").value).not.toBe('');
+    fireEvent.change(screen.getByTestId("forgot-confirm-password"), { target: { value: "password@123" } })
+    expect(screen.getByTestId("forgot-confirm-password").value).not.toBe('');
+
+    act(() => {
+      fireEvent.click(screen.getByTestId("forgot-submit-button"))
+    })
+    expect(screen.getByTestId("forgot-confirm-password").value).not.toEqual(screen.getByTestId("forgot-password").value)
+    expect(screen.getByText(/password and confirm password are not matching/i)).toBeInTheDocument();
+  })
+
+
+  test("password and confirm password are matching", async () => {
+    renderWithRouter(<App />)
+
+    fireEvent.change(screen.getByTestId("forgot-password"), { target: { value: "password@123" } })
+    expect(screen.getByTestId("forgot-password").value).not.toBe('');
+    fireEvent.change(screen.getByTestId("forgot-confirm-password"), { target: { value: "password@123" } })
+    expect(screen.getByTestId("forgot-confirm-password").value).not.toBe('');
+
+    act(() => {
+      fireEvent.click(screen.getByTestId("forgot-submit-button"))
+      expect(screen.getByTestId("forgot-confirm-password").value).toEqual(screen.getByTestId("forgot-confirm-password").value)
     })
 
-    expect(screen.getByText('Please enter a valid mail')).toBeInTheDocument();
-  })
-
-
-  test("checking valid email",()=>{
-    renderWithRouter(<App/>)
-
-    fireEvent.change(screen.getByTestId("reset-email"),{target : {value :'abc123@gmail.com'}})
-    expect(screen.getByTestId("reset-email").value).not.toBe('');
-    act(()=>{
-      fireEvent.click(screen.getByTestId("reset-button"));  
-    }) 
-    
+    await waitFor(() =>
+      expect(window.location.href).toBe("http://localhost/home")
+    );
   })
 })
