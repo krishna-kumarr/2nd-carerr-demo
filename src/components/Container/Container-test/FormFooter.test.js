@@ -25,7 +25,7 @@ describe("Social Links tests", () => {
       fireEvent.click(screen.getByTestId("signup-link"));
     });
     await waitFor(() =>
-      expect(window.location.href).toBe("http://localhost/signUp")
+      expect(window.location.href).toBe("http://localhost/role-selector")
     );
   })
 

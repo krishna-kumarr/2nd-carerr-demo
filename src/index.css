@@ -496,6 +496,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
+
 /* navlink active  */
 .navigation-link-active{
   padding: 0 2rem;
@@ -507,4 +508,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .navigation-link-active a.active {
   border-bottom: 3px solid rgba(255,193,7,1);
   font-weight: 600;
+}
+
+
+
+/* pradeep  */
+
+/* Professional Signup========================================================================= */
+.professional-signup-error-message{
+  display: none ;
+}
+
+input:invalid[focused="true"] ~ .professional-signup-error-message{
+  display: block ;
+}
+
+.react-tel-input .form-control{
+  /* background-color: red !important; */
+  width: 100% !important;
+}
+
+.react-datepicker__input-container {
+  width: inherit;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
 }

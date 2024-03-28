@@ -1,10 +1,9 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { BrowserRouter } from 'react-router-dom'
-import { act } from 'react-dom/test-utils';
+import { BrowserRouter } from 'react-router-dom' 
 import '@testing-library/jest-dom'
-import React from 'react';
-import App from "../../../App";
+import React from 'react'; 
+import ResetPassword from "../../../views/common/ResetPassword";
 
 describe("Login Test cases", () => {
 
@@ -20,7 +19,7 @@ describe("Login Test cases", () => {
 
 
   test("check availability", () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<ResetPassword />)
 
     expect(screen.getByText(/Change your Password/i)).toBeInTheDocument();
     expect(screen.getByTestId("forgot-email")).toBeInTheDocument();
@@ -31,7 +30,7 @@ describe("Login Test cases", () => {
 
 
   test("check availability", () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<ResetPassword />)
 
     expect(screen.getByText(/Change your Password/i)).toBeInTheDocument();
     expect(screen.getByTestId("forgot-email")).toBeInTheDocument();
@@ -42,7 +41,7 @@ describe("Login Test cases", () => {
 
 
   test("password required", () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<ResetPassword />)
     fireEvent.change(screen.getByTestId("forgot-password"), { target: { value: "password@123" } })
     expect(screen.getByTestId("forgot-password").value).toBe('password@123');
     expect(screen.getByTestId("forgot-confirm-password").value).toBe('');
@@ -55,7 +54,7 @@ describe("Login Test cases", () => {
 
 
   test("password required", () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<ResetPassword />)
 
     expect(screen.getByTestId("forgot-password").value).toBe('');
     fireEvent.change(screen.getByTestId("forgot-confirm-password"), { target: { value: "password@123" } })
@@ -69,7 +68,7 @@ describe("Login Test cases", () => {
 
 
   test("password and confirm password does not matching", () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<ResetPassword />)
 
     fireEvent.change(screen.getByTestId("forgot-password"), { target: { value: "password" } })
     expect(screen.getByTestId("forgot-password").value).not.toBe('');
@@ -85,7 +84,7 @@ describe("Login Test cases", () => {
 
 
   test("password and confirm password are matching", async () => {
-    renderWithRouter(<App />)
+    renderWithRouter(<ResetPassword />)
 
     fireEvent.change(screen.getByTestId("forgot-password"), { target: { value: "password@123" } })
     expect(screen.getByTestId("forgot-password").value).not.toBe('');
@@ -98,7 +97,7 @@ describe("Login Test cases", () => {
     })
 
     await waitFor(() =>
-      expect(window.location.href).toBe("http://localhost/home")
+      expect(window.location.href).toBe("http://localhost/home/all")
     );
   })
 })

@@ -1,5 +1,6 @@
 import React from "react";
-import EntryLevelLeftSideContainer from "../../components/Container/EntryLevelLeftSideContainer";
+import EntryLevelLeftSideContainer from "../../components/Container/EntryLevelLeftSideContainer"; 
+import EntryLevelRightSideContainer from "../../components/Container/EntryLevelRightSideContainer";
 import RoleSelectionLayout from "../../layouts/RoleSelectionLayout";
 
 const RoleSelection = () => {
@@ -7,7 +8,7 @@ const RoleSelection = () => {
     <div className="container-fluid ps-md-0">
       <div className="row g-0">
         <EntryLevelLeftSideContainer bgImage="role-selectors-bg-image" />
-        <RoleSelectionLayout/>
+        <EntryLevelRightSideContainer selectionType={<RoleSelectionLayout/>} formFooterQuestion="Already have an account?" footerNavigationLink="/" footerNavigationTestId="signin-link" footerNavigateLinkContent="sign in"/>
       </div>
     </div>
   );

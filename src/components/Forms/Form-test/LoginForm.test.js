@@ -1,10 +1,8 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from 'react-router-dom'
-import { act } from 'react-dom/test-utils';
 import '@testing-library/jest-dom'
 import React from 'react';
-import App from "../../../App";
 import Login from "../../../views/common/Login";
 
 describe("Login Test cases", () => {
@@ -92,7 +90,7 @@ describe("Login Test cases", () => {
 
 
   test("incorrect email", async() => {
-    renderWithRouter(<App />)
+    renderWithRouter(<Login />)
     //setting username and password target values of input element
     expect(screen.getByText(/Sign In to Second Careers/i)).toBeInTheDocument();
 
@@ -121,7 +119,7 @@ describe("Login Test cases", () => {
   
 
   test("correct email", async() => {
-    renderWithRouter(<App />)
+    renderWithRouter(<Login />)
     //setting username and password target values of input element
     expect(screen.getByText(/Sign In to Second Careers/i)).toBeInTheDocument();
 
@@ -143,14 +141,14 @@ describe("Login Test cases", () => {
     expect(screen.getByTestId('disable-login-button')).toBeInTheDocument()
     expect(screen.getByTestId('disable-login-button')).toBeDisabled()
     
-    await waitFor(()=>expect(window.location.href).toBe('http://localhost/home'))
+    await waitFor(()=>expect(window.location.href).toBe('http://localhost/home/all'))
   });
 
  
 
 
   test("clicking forgot password link", async () => {
-    renderWithRouter(<App />);
+    renderWithRouter(<Login />);
     expect(screen.getByText(/Sign In to Second Careers/i)).toBeInTheDocument();
     act(() => {
       fireEvent.click(screen.getByTestId("forgot-password"));

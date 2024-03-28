@@ -15,7 +15,7 @@ const SocialMediaContainer = () => {
       <div className="d-flex justify-content-evenly social-signup">
         <div className="card w-25">
           <div className="card-body text-center">
-            <Link to="/google" data-testid="google-link">
+            <Link to="/role-selector/professional/google-signup" data-testid="google-link">
               <Image
                 src={Images.googleIcon}
                 width={30}
@@ -28,7 +28,7 @@ const SocialMediaContainer = () => {
         </div>
         <div className="card w-25">
           <div className="card-body text-center">
-            <Link to='/linked-in' data-testid="linkedIn-link">
+            <Link to='/role-selector/professional/linkedIn-signup' data-testid="linkedIn-link">
             <Image
               src={Images.linkedIcon}
               width={30}
@@ -41,7 +41,7 @@ const SocialMediaContainer = () => {
         </div>
         <div className="card w-25">
           <div className="card-body text-center">
-          <Link to='/apple' data-testid="apple-link">
+          <Link to='/role-selector/professional/apple-signup' data-testid="apple-link">
             <Image
               src={Images.appleIcon}
               width={30}

@@ -35,9 +35,7 @@ const LoginForm = () => {
       if (LoginDetails.email_id.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
         setLoginErrors(false);
         setSubmitLoading(true);
-        setTimeout(() => {
-          pageNavigate("/home");
-        }, 1000)
+        pageNavigate("/home/all");
       }
       else {
         setErrMsg("Please enter a valid mail")

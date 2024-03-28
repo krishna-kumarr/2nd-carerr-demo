@@ -7,7 +7,7 @@ const JobDescription = () => {
     <div className="p-4 bg-white mt-2 rounded-4">
       <div>
         <h5>About Company</h5>
-        <h2 className="job-description">
+        <p className="job-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
           labore. Dolor iusto cum doloribus accusamus natus numquam a temporibus
           explicabo sequi, fugiat doloremque consequuntur obcaecati officia
@@ -15,9 +15,9 @@ const JobDescription = () => {
           temporibus mollitia quas totam, quisquam quis recusandae iusto odit
           magnam iste, velit beatae, ea aut quam est fugit! Cum facere libero
           enim in! Delectus.
-        </h2>
+        </p>
       </div>
-      <div class="d-flex justify-content-around mt-4">
+      <div className="d-flex justify-content-around mt-4">
         <label className="fs-6 company-details-icon">
           <FaRegCalendarAlt className="me-2 text-success" />
           Non-for-Profit / NGO
@@ -33,7 +33,7 @@ const JobDescription = () => {
       </div>
       <div className="mt-4">
         <h5>Job Summary</h5>
-        <h2 className="job-description">
+        <p className="job-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
           labore. Dolor iusto cum doloribus accusamus natus numquam a temporibus
           explicabo sequi, fugiat doloremque consequuntur obcaecati officia
@@ -41,8 +41,8 @@ const JobDescription = () => {
           temporibus mollitia quas totam, quisquam quis recusandae iusto odit
           magnam iste, velit beatae, ea aut quam est fugit! Cum facere libero
           enim in! Delectus.
-        </h2>
-        <h2 className="job-description">
+        </p>
+        <p className="job-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
           labore. Dolor iusto cum doloribus accusamus natus numquam a temporibus
           explicabo sequi, fugiat doloremque consequuntur obcaecati officia
@@ -50,7 +50,7 @@ const JobDescription = () => {
           temporibus mollitia quas totam, quisquam quis recusandae iusto odit
           magnam iste, velit beatae, ea aut quam est fugit! Cum facere libero
           enim in! Delectus.
-        </h2>
+        </p>
       </div>
       <div className="mt-4">
         <h5>Responsibilities</h5>
@@ -65,7 +65,7 @@ const JobDescription = () => {
       </div>
       <div className="mt-4">
         <h5>Skills / Competencies</h5>
-        <h2 className="job-description">
+        <p className="job-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
           labore. Dolor iusto cum doloribus accusamus natus numquam a temporibus
           explicabo sequi, fugiat doloremque consequuntur obcaecati officia
@@ -73,7 +73,7 @@ const JobDescription = () => {
           temporibus mollitia quas totam, quisquam quis recusandae iusto odit
           magnam iste, velit beatae, ea aut quam est fugit! Cum facere libero
           enim in! Delectus.
-        </h2>
+        </p>
         <ul className="ms-5 dashboard-skills-ul">
           <li>Lorem ipsum dolor sit amet consectetur.</li>
           <li>Lorem ipsum dolor sit amet consectetur.</li>
@@ -82,7 +82,7 @@ const JobDescription = () => {
           <li>Lorem ipsum dolor sit amet consectetur.</li>
           <li>Lorem ipsum dolor sit amet consectetur.</li>
         </ul>
-        <div class="d-flex justify-content-around mt-4 dashboard-job-post-icons">
+        <div className="d-flex justify-content-around mt-4 dashboard-job-post-icons">
           <label className="fs-6">
             <FaRegCalendarAlt className="me-2 text-success" />
             Volunteer
@@ -103,7 +103,7 @@ const JobDescription = () => {
           <li>Lorem ipsum dolor sit amet consectetur.</li>
           <li>Lorem ipsum dolor sit amet consectetur.</li>
         </ul>
-        <h2 className="job-description">
+        <p className="job-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
           labore. Dolor iusto cum doloribus accusamus natus numquam a temporibus
           explicabo sequi, fugiat doloremque consequuntur obcaecati officia
@@ -111,7 +111,7 @@ const JobDescription = () => {
           temporibus mollitia quas totam, quisquam quis recusandae iusto odit
           magnam iste, velit beatae, ea aut quam est fugit! Cum facere libero
           enim in! Delectus.
-        </h2>
+        </p>
 
       </div>
       </div>

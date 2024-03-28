@@ -25,7 +25,7 @@ describe("Social Links tests", () => {
       fireEvent.click(screen.getByTestId("google-link"));
     });
     await waitFor(() =>
-      expect(window.location.href).toBe("http://localhost/google")
+      expect(window.location.href).toBe("http://localhost/role-selector/professional/google-signup")
     );
   })
 
@@ -38,7 +38,7 @@ describe("Social Links tests", () => {
       fireEvent.click(screen.getByTestId("linkedIn-link"));
     });
     await waitFor(() =>
-      expect(window.location.href).toBe("http://localhost/linked-in")
+      expect(window.location.href).toBe("http://localhost/role-selector/professional/linkedIn-signup")
     );
   })
 
@@ -51,7 +51,7 @@ describe("Social Links tests", () => {
       fireEvent.click(screen.getByTestId("apple-link"));
     });
     await waitFor(() =>
-      expect(window.location.href).toBe("http://localhost/apple")
+      expect(window.location.href).toBe("http://localhost/role-selector/professional/apple-signup")
     );
   })
 })

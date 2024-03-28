@@ -8,8 +8,10 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
     "react": "^18.2.0",
+    "react-datepicker": "^6.6.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
@@ -18,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "react-scripts test --coverage --watchAll --collectCoverageFrom='src/**/*.{js,jsx}'"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +40,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   }
 }

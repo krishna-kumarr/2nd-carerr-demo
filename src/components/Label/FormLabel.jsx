@@ -2,7 +2,7 @@ import React from "react";
 
 const FormLabel = ({labelFieldName, lableClassName}) => {
   return (
-    <label class={lableClassName}>
+    <label className={lableClassName}>
       {labelFieldName} <span className="text-danger">*</span>
     </label>
   );

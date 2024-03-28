@@ -1,6 +1,15 @@
-import React from 'react'
+import React  from 'react'   
+import FormStateBlur from '../Forms/FormStateBlur'
 
-const Input = ({type,className, placeHolder, ariaLabel, testId, required, name, functionOnchange, functionOnkeyDown, disabled}) => {
+const Input = ({type,className, placeHolder, ariaLabel, testId, required, name, functionOnchange, functionOnkeyDown, disabled,pattern,role,alt}) => {
+
+  const {
+    unfocused, 
+    setUnfocused,
+    handleUnfocused 
+  }=FormStateBlur();
+ 
+
   return (
     <input
     type={type}
@@ -13,6 +22,13 @@ const Input = ({type,className, placeHolder, ariaLabel, testId, required, name, 
     onKeyDown={functionOnkeyDown}
     name={name}
     disabled={disabled === true ? "disabled" : null}
+    pattern={pattern}
+    role={role}
+    alt={alt}  
+
+    onBlur={handleUnfocused} 
+    onFocus={() => name==="confirmPassword" && setUnfocused(true)}  
+    focused={unfocused.toString()}
   />  
   )
 }
