@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TiEdit } from "react-icons/ti";
-import { FaCalendarAlt, FaLanguage, FaUser } from "react-icons/fa";
-import { FaLocationPin } from "react-icons/fa6";
+import { LuUpload } from "react-icons/lu";
 import { IoCalendarOutline, IoAdd } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdAddBox } from "react-icons/md";
@@ -13,90 +12,118 @@ import { HiLightBulb } from "react-icons/hi";
 import { MdAppRegistration } from "react-icons/md";
 import { IoShareSocialSharp } from "react-icons/io5";
 import { RiNotificationBadgeFill } from "react-icons/ri";
-
-import upload from "../assets/images/uploadResume.png";
 import DashboardNavbar from "../components/Navbar/DashboardNavbar";
 import { VideoJS } from "../components/VideoJS/Video";
 
 const Profile = () => {
-  const professionalPageDashboardMenu = ['Home', 'Learning', 'Community']
-
+  const professionalPageDashboardMenu = ["Home", "Learning", "Community"];
+  const [file, setFile] = useState({}); 
+  
+  const handleResumeUpload = (e) =>{
+    console.log(e.target.files[0])
+  }
   return (
     <>
-      <DashboardNavbar profileImage="https://github.com/mdo.png" profileName="George Martin" dashboadMenus={professionalPageDashboardMenu} />
+      <DashboardNavbar
+        profileImage="https://github.com/mdo.png"
+        profileName="George Martin"
+        dashboadMenus={professionalPageDashboardMenu}
+      />
       <section className="profile-bg">
         <div className="container-fluid mb-3">
-          <div className="p-5">
-            <div class="card border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="row align-items-center">
-                  <div class="col-md-3">
-                    <div class="text-center border-end">
+          <div className="p-2 p-lg-5">
+            <div className="card border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="row align-items-center">
+
+                  <div className="col-lg-3 border-end">
+                    <div className="text-center">
                       <img
                         src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                        class="img-fluid avatar-xxl rounded-circle"
+                        className="img-fluid avatar-xxl rounded-circle"
                         alt=""
                         width={150}
                         height={150}
                       />
-                      <h4 class="text-dark font-size-20 mt-3 mb-2">
-                        Geogrge Martin
-                      </h4>
                     </div>
-                    <div className="p-3">
-                      <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style={{ width: "75%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="container overflow-hidden text-center">
-                      <div class="row gy-5">
-                        <div class="col-6">
-                          <div class="p-3">
-                            <span className="profile-header">Date of Birth</span> :
-                            11/12/1990
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="p-3">
-                            <span className="profile-header">Mail</span> :
-                            georgemartin@gmail.com
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="p-3">
-                            <span className="profile-header">Phone</span> : +1 297
-                            456 895
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="p-3">
-                            <span className="profile-header">Address</span> : San
-                            franciso, 22201
-                          </div>
+                    <div className="p-3 pt-5">
+                      <div className="progress" style={{ height: "1.2rem" }}>
+                        <div
+                          className="progress-bar"
+                          role="progressbar"
+                          style={{ width: "75%", backgroundColor: "lightgreen" }}
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                          75%
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-shrink-0">
-                            <img
-                              src={upload}
-                              className="img-responsive"
-                              width={80}
-                              height={80}
-                              alt="..."
-                            />
-                          </div>
-                          <div class="flex-grow-1 ms-3 text-center">
-                            <b>
-                              Drag and Drop your Resume or <a href="#">Browse</a>
-                            </b>
-                            <label>Supported format pdf, docs</label>
+
+                  <div className="col-12 col-lg-4">
+                    <table cellPadding="15px" className="w-100 text-start">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <h5 className="text-dark font-size-20 mt-3 mb-2">
+                              Geogrge Martin
+                            </h5>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Date of Birth</td>
+                          <td>
+                            : <span>11/12/1990</span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Mail</td>
+                          <td>
+                            : <span>georgemartin@gmail.com</span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Phone</td>
+                          <td>
+                            : <span> +1 297 456 895</span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Address</td>
+                          <td>
+                            : <span>San franciso, 22201</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="col-lg-5">
+                    <div className="card border-0">
+                      <div className="card-body ">
+                        <div
+                          className="border rounded-5 py-5"
+                          onClick={() =>
+                            document.getElementById("input-file").click()
+                          }
+                        >
+                          <input
+                            type="file"
+                            className="form-control"
+                            id="input-file"
+                            hidden
+                            accept=".doc, .docx,.pdf, .txt"
+                            onChange={handleResumeUpload}
+                          />
+                          <div className="text-center">
+                            <div className="fs-2">
+                              <LuUpload />
+                            </div>
+                            <p className="px-5 m-0 pt-5">Drag and drop or click here to upload resume</p>
                           </div>
                         </div>
                       </div>
@@ -106,50 +133,49 @@ const Profile = () => {
               </div>
             </div>
 
-
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between ms-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="d-flex justify-content-between ms-1">
                   <label className="profile-side-headers">
-                    <FaUserTie className="me-4 brand-color"/>
+                    <FaUserTie className="me-4 brand-color" />
                     About
                   </label>
-                  <button type="button" class="btn btn-brand-color px-3 me-2">
+                  <button type="button" className="btn btn-brand-color px-3 me-2">
                     <TiEdit /> Edit
                   </button>
                 </div>
                 <p className="ms-5 mt-3 profile-descriptions">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                  a ipsum vitae assumenda iure sequi? Dicta saepe asperiores
-                  blanditiis natus quo repellat, eius, soluta sed architecto
-                  accusantium eum veritatis at voluptas rem odit corrupti earum!
-                  Minima itaque sunt a quos culpa laudantium totam reiciendis.
-                  Laudantium quae aspernatur quas cupiditate debitis expedita
-                  placeat iusto esse culpa tenetur aliquam recusandae quaerat
-                  repellendus fugiat voluptates laborum dolores, facere eveniet
-                  impedit sit. Asperiores, distinctio?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deserunt a ipsum vitae assumenda iure sequi? Dicta saepe
+                  asperiores blanditiis natus quo repellat, eius, soluta sed
+                  architecto accusantium eum veritatis at voluptas rem odit
+                  corrupti earum! Minima itaque sunt a quos culpa laudantium
+                  totam reiciendis. Laudantium quae aspernatur quas cupiditate
+                  debitis expedita placeat iusto esse culpa tenetur aliquam
+                  recusandae quaerat repellendus fugiat voluptates laborum
+                  dolores, facere eveniet impedit sit. Asperiores, distinctio?
                 </p>
               </div>
             </div>
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between ms-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="d-flex justify-content-between ms-1">
                   <label className="profile-side-headers">
                     <PiBagFill className="me-4 brand-color" />
                     Experience
                   </label>
-                  <button type="button" class="btn btn-brand-color px-3 me-2">
+                  <button type="button" className="btn btn-brand-color px-3 me-2">
                     <MdAddBox /> Add
                   </button>
                 </div>
                 <div className="ms-5">
-                  <div class="d-flex justify-content-between  mt-3">
+                  <div className="d-flex justify-content-between  mt-3">
                     <label className="profile-inner-headers">
                       UI Designer | Market Studios
                     </label>
                     <button
                       type="button"
-                      class="btn btn-outline-warning text-dark me-2 px-3"
+                      className="btn btn-outline-warning text-dark me-2 px-3"
                     >
                       <TiEdit /> Edit
                     </button>
@@ -162,20 +188,21 @@ const Profile = () => {
                     </span>
                   </label>
                   <p className="mt-1 profile-descriptions">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                    recusandae iste quos placeat enim cum facere accusantium nemo
-                    deserunt voluptas quisquam doloremque officiis. Adipisci, odio!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolor, recusandae iste quos placeat enim cum facere
+                    accusantium nemo deserunt voluptas quisquam doloremque
+                    officiis. Adipisci, odio!
                   </p>
                   <hr className="" />
                 </div>
                 <div className="ms-5">
-                  <div class="d-flex justify-content-between  mt-3">
+                  <div className="d-flex justify-content-between  mt-3">
                     <label className="profile-inner-headers">
                       UI Designer | Market Studios
                     </label>
                     <button
                       type="button"
-                      class="btn btn-outline-warning text-dark me-2 px-3"
+                      className="btn btn-outline-warning text-dark me-2 px-3"
                     >
                       <TiEdit /> Edit
                     </button>
@@ -188,20 +215,21 @@ const Profile = () => {
                     </span>
                   </label>
                   <p className="mt-1 profile-descriptions">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                    recusandae iste quos placeat enim cum facere accusantium nemo
-                    deserunt voluptas quisquam doloremque officiis. Adipisci, odio!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolor, recusandae iste quos placeat enim cum facere
+                    accusantium nemo deserunt voluptas quisquam doloremque
+                    officiis. Adipisci, odio!
                   </p>
                   <hr />
                 </div>
                 <div className="ms-5">
-                  <div class="d-flex justify-content-between  mt-3">
+                  <div className="d-flex justify-content-between  mt-3">
                     <label className="profile-inner-headers">
                       UI Designer | Market Studios
                     </label>
                     <button
                       type="button"
-                      class="btn btn-outline-warning text-dark me-2 px-3"
+                      className="btn btn-outline-warning text-dark me-2 px-3"
                     >
                       <TiEdit /> Edit
                     </button>
@@ -214,20 +242,21 @@ const Profile = () => {
                     </span>
                   </label>
                   <p className="mt-1 profile-descriptions">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                    recusandae iste quos placeat enim cum facere accusantium nemo
-                    deserunt voluptas quisquam doloremque officiis. Adipisci, odio!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolor, recusandae iste quos placeat enim cum facere
+                    accusantium nemo deserunt voluptas quisquam doloremque
+                    officiis. Adipisci, odio!
                   </p>
                   <hr className="" />
                 </div>
                 <div className="ms-5">
-                  <div class="d-flex justify-content-between  mt-3">
+                  <div className="d-flex justify-content-between  mt-3">
                     <label className="profile-inner-headers">
                       UI Designer | Market Studios
                     </label>
                     <button
                       type="button"
-                      class="btn btn-outline-warning text-dark me-2 px-3"
+                      className="btn btn-outline-warning text-dark me-2 px-3"
                     >
                       <TiEdit /> Edit
                     </button>
@@ -240,31 +269,32 @@ const Profile = () => {
                     </span>
                   </label>
                   <p className="mt-1 profile-descriptions">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                    recusandae iste quos placeat enim cum facere accusantium nemo
-                    deserunt voluptas quisquam doloremque officiis. Adipisci, odio!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolor, recusandae iste quos placeat enim cum facere
+                    accusantium nemo deserunt voluptas quisquam doloremque
+                    officiis. Adipisci, odio!
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between ms-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="d-flex justify-content-between ms-1">
                   <label className="profile-side-headers">
                     <FaGraduationCap className="me-4 brand-color" />
                     Education
                   </label>
-                  <button type="button" class="btn btn-brand-color px-3 me-2">
+                  <button type="button" className="btn btn-brand-color px-3 me-2">
                     <MdAddBox /> Add
                   </button>
                 </div>
                 <div className="ms-5">
-                  <div class="d-flex justify-content-between  mt-3">
+                  <div className="d-flex justify-content-between  mt-3">
                     <label className="profile-inner-headers">Los Angels</label>
                     <button
                       type="button"
-                      class="btn btn-outline-warning text-dark me-2 px-3"
+                      className="btn btn-outline-warning text-dark me-2 px-3"
                     >
                       <TiEdit /> Edit
                     </button>
@@ -272,99 +302,103 @@ const Profile = () => {
 
                   <label className="profile-descriptions">
                     <IoCalendarOutline /> Oct 2012 - Sep 2015
-                    <div class="vr ms-3"></div>
+                    <div className="vr ms-3"></div>
                     <span>
                       <IoLocationOutline /> Los Angels
                     </span>
                   </label>
                   <p className="mt-1 profile-descriptions">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                    recusandae iste quos placeat enim cum facere accusantium nemo
-                    deserunt voluptas quisquam doloremque officiis. Adipisci, odio!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolor, recusandae iste quos placeat enim cum facere
+                    accusantium nemo deserunt voluptas quisquam doloremque
+                    officiis. Adipisci, odio!
                   </p>
                   <hr />
                 </div>
               </div>
             </div>
 
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="d-flex  profile-side-headers">
-                  <div class="flex-grow-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="d-flex  profile-side-headers">
+                  <div className="flex-grow-1">
                     <label className="profile-side-headers">
                       <HiLightBulb className="me-4 brand-color" />
                       Skills
                     </label>
                   </div>
-                  <div class="p-1">
-                    <button type="button" class="btn btn-brand-color px-3 me-2">
+                  <div className="p-1">
+                    <button type="button" className="btn btn-brand-color px-3 me-2">
                       <MdAddBox /> Add
                     </button>
                   </div>
-                  <div class="p-1">
+                  <div className="p-1">
                     <button
                       type="button"
-                      class="btn btn-outline-warning text-dark px-3 me-2"
+                      className="btn btn-outline-warning text-dark px-3 me-2"
                     >
                       <TiEdit /> Edit
                     </button>
                   </div>
                 </div>
 
-                <div class="row row-cols-auto ms-5 profile-descriptions">
-                  <div class="col border rounded-2 p-2 fw-bold">
+                <div className="row row-cols-auto ms-5 profile-descriptions">
+                  <div className="col border rounded-2 p-2 fw-bold">
                     Python - <span className="fw-normal">Expert</span>
                   </div>
-                  <div class="col border p-2 fw-bold ms-3">
+                  <div className="col border p-2 fw-bold ms-3">
                     Python - <span className="fw-normal">Expert</span>
                   </div>
-                  <div class="col border p-2 fw-bold ms-3">
+                  <div className="col border p-2 fw-bold ms-3">
                     Python - <span className="fw-normal">Expert</span>
                   </div>
-                  <div class="col border p-2 fw-bold ms-3">
+                  <div className="col border p-2 fw-bold ms-3">
                     Python - <span className="fw-normal">Expert</span>
                   </div>
-                  <div class="col border p-2 fw-bold ms-3">
+                  <div className="col border p-2 fw-bold ms-3">
                     Python - <span className="fw-normal">Expert</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between ms-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="d-flex justify-content-between ms-1">
                   <label className="profile-side-headers">
                     <MdAppRegistration className="me-4 brand-color" />
                     Preferences
                   </label>
-                  <button type="button" class="btn btn-brand-color px-3 me-2">
+                  <button type="button" className="btn btn-brand-color px-3 me-2">
                     <TiEdit /> Edit
                   </button>
                 </div>
                 <p className="ms-5 mt-3 profile-descriptions">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                  a ipsum vitae assumenda iure sequi? Dicta saepe asperiores
-                  blanditiis natus quo repellat, eius, soluta sed architecto
-                  accusantium eum veritatis at voluptas rem odit corrupti earum!
-                  Minima itaque sunt a quos culpa laudantium totam reiciendis.
-                  Laudantium quae aspernatur quas cupiditate debitis expedita
-                  placeat iusto esse culpa tenetur aliquam recusandae quaerat
-                  repellendus fugiat voluptates laborum dolores, facere eveniet
-                  impedit sit. Asperiores, distinctio?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deserunt a ipsum vitae assumenda iure sequi? Dicta saepe
+                  asperiores blanditiis natus quo repellat, eius, soluta sed
+                  architecto accusantium eum veritatis at voluptas rem odit
+                  corrupti earum! Minima itaque sunt a quos culpa laudantium
+                  totam reiciendis. Laudantium quae aspernatur quas cupiditate
+                  debitis expedita placeat iusto esse culpa tenetur aliquam
+                  recusandae quaerat repellendus fugiat voluptates laborum
+                  dolores, facere eveniet impedit sit. Asperiores, distinctio?
                 </p>
               </div>
             </div>
 
-            <div class="row mt-3 ">
-              <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card h-100 border-0 shadow-sm rounded-4">
-                  <div class="card-body ">
-                    <div class="d-flex justify-content-between ms-1">
+            <div className="row mt-3 ">
+              <div className="col-sm-6 mb-3 mb-sm-0">
+                <div className="card h-100 border-0 shadow-sm rounded-4">
+                  <div className="card-body ">
+                    <div className="d-flex justify-content-between ms-1">
                       <label className="profile-side-headers">
                         <FaUserTie className="me-4 brand-color" />
                         Video
                       </label>
-                      <button type="button" class="btn btn-brand-color px-3 me-2">
+                      <button
+                        type="button"
+                        className="btn btn-brand-color px-3 me-2"
+                      >
                         <TiEdit /> Edit
                       </button>
                     </div>
@@ -374,25 +408,28 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div class="card h-100 border-0 shadow-sm rounded-4">
-                  <div class="card-body">
-                    <div class="d-flex  profile-side-headers">
-                      <div class="flex-grow-1">
+              <div className="col-sm-6">
+                <div className="card h-100 border-0 shadow-sm rounded-4">
+                  <div className="card-body">
+                    <div className="d-flex  profile-side-headers">
+                      <div className="flex-grow-1">
                         <label className="profile-side-headers">
                           <IoLanguage className="me-4 brand-color" />
                           Languages
                         </label>
                       </div>
-                      <div class="p-1">
-                        <button type="button" class="btn btn-brand-color px-3 me-2">
+                      <div className="p-1">
+                        <button
+                          type="button"
+                          className="btn btn-brand-color px-3 me-2"
+                        >
                           <MdAddBox /> Add
                         </button>
                       </div>
-                      <div class="p-1">
+                      <div className="p-1">
                         <button
                           type="button"
-                          class="btn btn-outline-warning text-dark px-3 me-2"
+                          className="btn btn-outline-warning text-dark px-3 me-2"
                         >
                           <TiEdit /> Edit
                         </button>
@@ -419,14 +456,14 @@ const Profile = () => {
               </div>
             </div>
 
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body ">
-                <div class="d-flex justify-content-between ms-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body ">
+                <div className="d-flex justify-content-between ms-1">
                   <label className="profile-side-headers">
                     <FaUserTie className="me-4 brand-color" />
                     Additional Informations
                   </label>
-                  <button type="button" class="btn btn-brand-color px-3 me-2">
+                  <button type="button" className="btn btn-brand-color px-3 me-2">
                     <TiEdit /> Edit
                   </button>
                 </div>
@@ -435,7 +472,8 @@ const Profile = () => {
                   <label className="profile-inner-headers">Certificates</label>
                   <ul className="mt-1 profile-descriptions">
                     <li>
-                      Raleigh Jaycee of the Year 2008 (Junior Chamber of Commence)
+                      Raleigh Jaycee of the Year 2008 (Junior Chamber of
+                      Commence)
                     </li>
                     <li>
                       Wake County Schools Healthy Kids Advisory Board (2008 -
@@ -445,7 +483,8 @@ const Profile = () => {
                   <label className="profile-inner-headers">Certificates</label>
                   <ul className="mt-1 profile-descriptions">
                     <li>
-                      Raleigh Jaycee of the Year 2008 (Junior Chamber of Commence)
+                      Raleigh Jaycee of the Year 2008 (Junior Chamber of
+                      Commence)
                     </li>
                     <li>
                       Wake County Schools Healthy Kids Advisory Board (2008 -
@@ -455,7 +494,8 @@ const Profile = () => {
                   <label className="profile-inner-headers">Certificates</label>
                   <ul className="mt-1 profile-descriptions">
                     <li>
-                      Raleigh Jaycee of the Year 2008 (Junior Chamber of Commence)
+                      Raleigh Jaycee of the Year 2008 (Junior Chamber of
+                      Commence)
                     </li>
                     <li>
                       Wake County Schools Healthy Kids Advisory Board (2008 -
@@ -465,7 +505,8 @@ const Profile = () => {
                   <label className="profile-inner-headers">Certificates</label>
                   <ul className="mt-1 profile-descriptions">
                     <li>
-                      Raleigh Jaycee of the Year 2008 (Junior Chamber of Commence)
+                      Raleigh Jaycee of the Year 2008 (Junior Chamber of
+                      Commence)
                     </li>
                     <li>
                       Wake County Schools Healthy Kids Advisory Board (2008 -
@@ -475,24 +516,24 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="d-flex  profile-side-headers">
-                  <div class="flex-grow-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="d-flex  profile-side-headers">
+                  <div className="flex-grow-1">
                     <label className="profile-side-headers">
                       <IoShareSocialSharp className="me-4 brand-color" />
                       Social Links
                     </label>
                   </div>
-                  <div class="p-1">
-                    <button type="button" class="btn btn-brand-color px-3 me-2">
+                  <div className="p-1">
+                    <button type="button" className="btn btn-brand-color px-3 me-2">
                       <MdAddBox /> Add
                     </button>
                   </div>
-                  <div class="p-1">
+                  <div className="p-1">
                     <button
                       type="button"
-                      class="btn btn-outline-warning text-dark px-3 me-2"
+                      className="btn btn-outline-warning text-dark px-3 me-2"
                     >
                       <TiEdit /> Edit
                     </button>
@@ -506,38 +547,40 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-            <div class="card mt-3 border-0 shadow-sm rounded-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between ms-1">
+            <div className="card mt-3 border-0 shadow-sm rounded-4">
+              <div className="card-body">
+                <div className="d-flex justify-content-between ms-1">
                   <label className="profile-side-headers">
                     <RiNotificationBadgeFill className="me-4 brand-color" />
                     Expert Notes
                   </label>
                 </div>
                 <p className="ms-5 mt-3 profile-descriptions">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                  a ipsum vitae assumenda iure sequi? Dicta saepe asperiores
-                  blanditiis natus quo repellat, eius, soluta sed architecto
-                  accusantium eum veritatis at voluptas rem odit corrupti earum!
-                  Minima itaque sunt a quos culpa laudantium totam reiciendis.
-                  Laudantium quae aspernatur quas cupiditate debitis expedita
-                  placeat iusto esse culpa tenetur aliquam recusandae quaerat
-                  repellendus fugiat voluptates laborum dolores, facere eveniet
-                  impedit sit. Asperiores, distinctio?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deserunt a ipsum vitae assumenda iure sequi? Dicta saepe
+                  asperiores blanditiis natus quo repellat, eius, soluta sed
+                  architecto accusantium eum veritatis at voluptas rem odit
+                  corrupti earum! Minima itaque sunt a quos culpa laudantium
+                  totam reiciendis. Laudantium quae aspernatur quas cupiditate
+                  debitis expedita placeat iusto esse culpa tenetur aliquam
+                  recusandae quaerat repellendus fugiat voluptates laborum
+                  dolores, facere eveniet impedit sit. Asperiores, distinctio?
                 </p>
-                <div class="form-check ms-5">
+                <div className="form-check ms-5">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="checkbox"
                     value=""
                     id="flexCheckDefault"
                   />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    I provide consent to 2nd Careers to market the expert notes and
-                    my profile to potential employees
+                  <label className="form-check-label" htmlFor="flexCheckDefault">
+                    I provide consent to 2nd Careers to market the expert notes
+                    and my profile to potential employees
                   </label>
                 </div>
-                <button className="btn btn-brand-color mt-3 ms-5">Approve</button>
+                <button className="btn btn-brand-color mt-3 ms-5">
+                  Approve
+                </button>
               </div>
             </div>
           </div>

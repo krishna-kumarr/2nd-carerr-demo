@@ -1,7 +1,7 @@
 import React from "react";
 import Images from "../../utils/images.js";
 import { MdNotificationsActive } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"; 
 
 const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
   return (
@@ -72,7 +72,7 @@ const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
                 aria-expanded="false"
               >
                 <img
-                  src={profileImage}
+                  src="https://bootdey.com/img/Content/avatar/avatar1.png"
                   alt="mdo"
                   width="32"
                   height="32"

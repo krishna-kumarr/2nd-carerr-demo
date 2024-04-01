@@ -33,14 +33,14 @@ const LearningPage = () => {
                                 
                             />
                         </div>
-                        <div class="modal fade col-md-4" id="learnMore" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Learn More</h5>    
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div className="modal fade col-md-4" id="learnMore" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="staticBackdropLabel">Learn More</h5>    
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div className="modal-body">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam omnis animi at eveniet perferendis fugit voluptatum enim et. Sapiente nostrum eius velit porro accusamus culpa eligendi corrupti eveniet nulla fugiat aliquid, a quas soluta odio suscipit blanditiis officia. Assumenda ullam nihil incidunt a dolores recusandae, voluptate culpa ipsam. Minus, aspernatur!
                                     </div>
                                 </div>
