@@ -9,14 +9,14 @@ const JobFilter = () => {
   return (
     <form>
       <div className="d-flex justify-content-between ">
-      <label htmlhtmlFor="skills" className="form-label fs-4 mb-2 job-filter-heading">
+      <label htmlFor="skills" className="form-label fs-4 mb-2 job-filter-heading">
           <span>Filter</span>
         </label>
         <IoFilterSharp />
         </div>  
         <hr className="mb-3 mt-1"/>
       <div className="mb-3">
-        <label htmlhtmlFor="skills" className="form-label fs-4 mb-2">
+        <label htmlFor="skills" className="form-label fs-4 mb-2">
           <span className="job-filter-sub-headings">Skills</span>
         </label>
         <select value={option} onChange={e => setOption(e.target.value)}
@@ -32,7 +32,7 @@ const JobFilter = () => {
         </select>
       </div>
       <div className="mb-3">
-        <label htmlhtmlFor="selectors" className="form-label fs-4 mb-2">
+        <label htmlFor="selectors" className="form-label fs-4 mb-2">
           <span className="job-filter-sub-headings">Sectors</span>          
         </label>
         <select
@@ -57,7 +57,7 @@ const JobFilter = () => {
             id="workplace_hybrid"
             data-testid="Hybrid"
           />
-          <label className="form-check-label"  htmlhtmlFor="workplace_hybrid" >
+          <label className="form-check-label"  htmlFor="workplace_hybrid" >
             Hybrid
           </label>
         </div>
@@ -69,7 +69,7 @@ const JobFilter = () => {
             id="workplace_on_site"
             data-testid="On-site"
           />
-          <label className="form-check-label"  htmlhtmlFor="workplace_on_site">
+          <label className="form-check-label"  htmlFor="workplace_on_site">
             On-site
           </label>
         </div>
@@ -81,13 +81,13 @@ const JobFilter = () => {
             id="workplace_remote"
             data-testid="Remote" 
           />
-          <label className="form-check-label"  htmlhtmlFor="workplace_remote">
+          <label className="form-check-label"  htmlFor="workplace_remote">
             Remote
           </label>
         </div>
       </div>
       <div className="mb-3">
-        <label htmlhtmlFor="location" className="form-label fs-4 mb-2 ">
+        <label htmlFor="location" className="form-label fs-4 mb-2 ">
           <span className="job-filter-sub-headings">Location</span>          
         </label>
         <select
@@ -112,7 +112,7 @@ const JobFilter = () => {
             id="job_full-time"
             data-testid="Full-time"
           />
-          <label className="form-check-label" htmlhtmlFor="job_full-time">
+          <label className="form-check-label" htmlFor="job_full-time">
             Full type
           </label>
         </div>
@@ -124,7 +124,7 @@ const JobFilter = () => {
             id="job_part_time"
             data-testid="Part-time"
           />
-          <label className="form-check-label"  htmlhtmlFor="job_part_time">
+          <label className="form-check-label"  htmlFor="job_part_time">
             Part time
           </label>
         </div>
@@ -136,7 +136,7 @@ const JobFilter = () => {
             id="job_contract"
             data-testid="Contract"
           />
-          <label className="form-check-label"  htmlhtmlFor="job_contract">
+          <label className="form-check-label"  htmlFor="job_contract">
             Contract
           </label>
         </div>
@@ -147,7 +147,7 @@ const JobFilter = () => {
             value=""
             id="job_temporary"
           />
-          <label className="form-check-label"  htmlhtmlFor="job_temporary">
+          <label className="form-check-label"  htmlFor="job_temporary">
             Temporary
           </label>
         </div>
@@ -159,7 +159,7 @@ const JobFilter = () => {
             id="job_others"
             data-testid="Other"
           />
-          <label className="form-check-label"  htmlhtmlFor="job_others">
+          <label className="form-check-label"  htmlFor="job_others">
             Others
           </label>
         </div>
@@ -171,7 +171,7 @@ const JobFilter = () => {
             id="workplace_remote"
             data-testid="Volunteer"
           />
-          <label className="form-check-label"  htmlhtmlFor="workplace_remote">
+          <label className="form-check-label"  htmlFor="workplace_remote">
             Volunteer
           </label>
         </div>
@@ -182,7 +182,7 @@ const JobFilter = () => {
             value=""
             id="workplace_remote"
           />
-          <label className="form-check-label"  htmlhtmlFor="workplace_remote">
+          <label className="form-check-label"  htmlFor="workplace_remote">
             Internship
           </label>
         </div>
@@ -197,7 +197,7 @@ const JobFilter = () => {
             id="schedule_fixed"
             data-testid="Fixed"
           />
-          <label className="form-check-label"  htmlhtmlFor="schedule_fixed">
+          <label className="form-check-label"  htmlFor="schedule_fixed">
             Fixed
           </label>
         </div>
@@ -209,7 +209,7 @@ const JobFilter = () => {
             id="schedule_flexible"
             data-testid="Flexible"
           />
-          <label className="form-check-label"  htmlhtmlFor="schedule_flexible">
+          <label className="form-check-label"  htmlFor="schedule_flexible">
             Flexible
           </label>
         </div>
@@ -221,7 +221,7 @@ const JobFilter = () => {
             id="schedule_weekend_only"
             data-testid="WeekendOnly"
           />
-          <label className="form-check-label"  htmlhtmlFor="schedule_weekend_only">
+          <label className="form-check-label"  htmlFor="schedule_weekend_only">
             Weekend only
           </label>
         </div>
@@ -233,7 +233,7 @@ const JobFilter = () => {
             id="schedule_monday"
             data-testid="MondaytoFriday"
           />
-          <label className="form-check-label"  htmlhtmlFor="schedule_monday">
+          <label className="form-check-label"  htmlFor="schedule_monday">
             Monday to Friday
           </label>
         </div>
@@ -245,7 +245,7 @@ const JobFilter = () => {
             id="schedule_us"
             data-testid="UStime"
           />
-          <label className="form-check-label"  htmlhtmlFor="schedule_us">
+          <label className="form-check-label"  htmlFor="schedule_us">
             Us time
           </label>
         </div>
@@ -257,7 +257,7 @@ const JobFilter = () => {
             id="schedule_india"
             data-testid="Indiatime"
           />
-          <label className="form-check-label"  htmlhtmlFor="schedule_india">
+          <label className="form-check-label"  htmlFor="schedule_india">
             India time
           </label>
         </div>
@@ -269,7 +269,7 @@ const JobFilter = () => {
             id="schedule_other"
             data-testid="ScheduleOther"
           />
-          <label className="form-check-label"  htmlhtmlFor="schedule_other">
+          <label className="form-check-label"  htmlFor="schedule_other">
             Other
           </label>
         </div>

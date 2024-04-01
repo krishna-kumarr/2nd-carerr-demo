@@ -231,7 +231,7 @@ const ProfessionalSignUpForm = (props) => {
           />
 
 
-          <label className="form-check-label" htmlhtmlFor="invalidCheck">
+          <label className="form-check-label" htmlFor="invalidCheck">
             I agree to all the <a href="#">Terms</a> and
             <a href="#"> Privacy policy</a>
           </label>
