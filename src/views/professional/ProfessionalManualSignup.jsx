@@ -9,7 +9,7 @@ const ProfessionalManualSignup = () => {
     <div className="container-fluid ps-md-0">
       <div className="row g-0">
         <EntryLevelLeftSideContainer bgImage="professional-bg-image" />
-        <EntryLevelRightSideContainer formTitle="Create Account" formWidth="col-lg-8 col-md-8" formName='login' formHeaderClassName="signup-heading" form={<ProfessionalSignUpForm/>} formFooterQuestion="Already have an account?" footerNavigationLink="Sign in"/>
+        <EntryLevelRightSideContainer formTitle="Create Account" formWidth="col-lg-8 col-md-8" formName='login' formHeaderClassName="signup-heading" form={<ProfessionalSignUpForm/>} formFooterQuestion="Already have an account?" footerNavigationLink="/" footerNavigationTestId="signin-link" footerNavigateLinkContent="Sign in"/>
       </div>
     </div>
   )

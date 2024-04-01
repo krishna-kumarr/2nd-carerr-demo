@@ -7,47 +7,60 @@ import { PiEnvelopeSimpleOpenThin } from "react-icons/pi";
 import { CiLock } from "react-icons/ci";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { PiEyeLight } from "react-icons/pi";
+
 
 const ForgetPasswordForm = () => {
   const pageNavigate = useNavigate();
-  const [err, setErr] = useState(false);
-  const [errMsg, setErrMsg] = useState("");
-  const [userDetails, setUserDetails] = useState({
-    email_id: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfPassword, setShowConfPassword] = useState(false);
+  const [resetPass, setResetPass] = useState({
+    password: '',
+    confirmPassword: ''
+  })
+
+
 
   const handlekeydown = (e) => {
     if (e.key === "Enter") {
-      e.preventDefault();
+      e.preventDefault()
     }
-  };
+  }
 
-  const handleSubmitData = () => { 
-    if (userDetails.password === "" || userDetails.confirmPassword === "") {
-      setErr(true);
-    } else {
-      if (userDetails.password === userDetails.confirmPassword) {
-        setErr(false);
-        pageNavigate("/home/all")
-      } else {
-        setErrMsg("password and confirm password are not matching")
-        setErr(true);
+
+  const handleSubmitData = (e) => {
+    e.preventDefault()
+    setErrors({});
+    let newErrors = {};
+
+    // Validate password
+    if (!resetPass.password) {
+      newErrors.password = 'password is required.';
+    }
+
+    //validate confirm password
+    if (!resetPass.confirmPassword) {
+      newErrors.confirmPassword = 'confirm password is required.';
+    }
+
+    if (resetPass.password && resetPass.confirmPassword) {
+      if (resetPass.password !== resetPass.confirmPassword) {
+        newErrors.notMatching = 'password and confirm password are not matching.';
       }
     }
-  };
+
+
+    // on submit
+    if (Object.keys(newErrors).length === 0) {
+      pageNavigate("/")
+    } else {
+      setErrors(newErrors);
+    }
+  }
 
   return (
-    <form>
-
-      {err && errMsg !== "" ? (
-        <Label
-          className="mb-3 text-danger"
-          title={errMsg}
-        />
-      ) : null}
-
+    <form onSubmit={handleSubmitData}>
       <div className="input-group mb-3 login-form">
         <InputGroup
           className="login-input-group-text input-group-text border border-0"
@@ -60,16 +73,11 @@ const ForgetPasswordForm = () => {
           placeHolder="Email ID"
           ariaLabel="email"
           testId="forgot-email"
+          value="applied123@gmail.com"
           disabled={true}
         />
       </div>
 
-      {err && userDetails.email_id === "" ? (
-        <Label
-          className="mb-3 text-danger"
-          title="Please enter an email address."
-        />
-      ) : null}
 
       <div className="input-group mb-3 login-form ">
         <InputGroup
@@ -78,31 +86,28 @@ const ForgetPasswordForm = () => {
           reIcons={<CiLock className="fs-3" />}
         />
         <Input
-          type="password"
-          className="form-control login-input border-start-0 border-top-0 border-bottom-0 rounded-3"
+          type={showPassword ? "text" : "password"}
+          className="form-control login-input border-start-0 border-top-0 border-bottom-0 rounded-3 password-field-focus"
           placeHolder="New Password"
           ariaLabel="password"
           testId="forgot-password"
           functionOnchange={(e) =>
-            setUserDetails({ ...userDetails, [e.target.name]: e.target.value })
+            setResetPass({ ...resetPass, [e.target.name]: e.target.value })
           }
           functionOnkeyDown={handlekeydown}
           name="password"
         />
-
         <InputGroup
           className="login-input-group-text input-group-text border-end-0 border-top-0 border-bottom-0"
           id="basic-addon3"
-          reIcons={<BsFillEyeSlashFill className="fs-3 visible-eye" />}
+          reIcons={showPassword ? <PiEyeLight className="fs-3 visible-eye" /> : <BsFillEyeSlashFill className="fs-3 visible-eye" />}
+          onClick={()=>setShowPassword(!showPassword)}
         />
+
+        {errors.password && <Label className="py-2 text-danger col-12" title={errors.password} />}
       </div>
 
-      {err && userDetails.password === "" ? (
-        <Label
-          title="Please enter your new password."
-          className="mb-3 text-danger"
-        />
-      ) : null}
+
 
       <div className="input-group mb-3 login-form ">
         <InputGroup
@@ -111,39 +116,34 @@ const ForgetPasswordForm = () => {
           reIcons={<CiLock className="fs-3" />}
         />
         <Input
-          type="password"
-          className="form-control login-input border-start-0 border-top-0 border-bottom-0 rounded-3"
+          type={showConfPassword ? "text" : "password"}
+          className="form-control login-input border-start-0 border-top-0 border-bottom-0 rounded-3 password-field-focus"
           placeHolder="Confirm Password"
           ariaLabel="password"
           testId="forgot-confirm-password"
           functionOnchange={(e) =>
-            setUserDetails({ ...userDetails, [e.target.name]: e.target.value })
+            setResetPass({ ...resetPass, [e.target.name]: e.target.value })
           }
           functionOnkeyDown={handlekeydown}
           name="confirmPassword"
         />
-
         <InputGroup
           className="login-input-group-text input-group-text border-end-0 border-top-0 border-bottom-0"
           id="basic-addon3"
-          reIcons={<BsFillEyeSlashFill className="fs-3 visible-eye" />}
+          reIcons={showConfPassword ? <PiEyeLight className="fs-3 visible-eye" /> : <BsFillEyeSlashFill className="fs-3 visible-eye" />}
+          onClick={()=>setShowConfPassword(!showConfPassword)}
         />
+        {errors.confirmPassword && <Label className="py-2 text-danger col-12" title={errors.confirmPassword} />}
+        {errors.notMatching && <Label className="py-2 text-danger col-12" title={errors.notMatching} />}
       </div>
 
-      {err && userDetails.confirmPassword === "" ? (
-        <Label
-          title="Please enter confirm password."
-          className="mb-3 text-danger"
-        />
-      ) : null}
 
       <div className="d-grid mt-3">
         <Button
           className="btn btn-lg btn-login fw-bold mb-2"
           title="Submit"
           testId="forgot-submit-button"
-          buttonType="button"
-          functionOnchange={handleSubmitData}
+          buttonType="submit"
         />
       </div>
     </form>

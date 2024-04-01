@@ -19,19 +19,19 @@ const JobCard = () => {
         </div>
       </div>
       <div className="d-flex justify-content-around card-company-details-icon mt-4">
-        <label className="fs-7">
+        <label className="fs-7 card-inner-details">
           <FaLocationDot className="me-2 text-success" />
-          Hybirid-Washington-USA
+          Hybirid-Washington
         </label>
-        <label className="fs-7">
+        <label className="fs-7 card-inner-details">
           <FaShoppingBag className="me-2 text-warning" />
           US Time
         </label>
-        <label className="fs-7">
+        <label className="fs-7 card-inner-details">
           <IoTimeSharp className="me-2 text-primary"  />
           Full Time
         </label>
-        <label className="fs-7">
+        <label className="fs-7 card-inner-details">
           <FaWallet className="me-2 text-warning" />
           Paid
         </label>

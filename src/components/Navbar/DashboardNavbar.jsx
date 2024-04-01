@@ -5,7 +5,8 @@ import { NavLink } from "react-router-dom";
 
 const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
   return (
-    <nav className="navbar navbar-light bg-white fixed-top navbar-expand-md shadow-sm p-2 justify-content-center">
+    <div className="navbar-height">
+    <nav className="navbar navbar-light bg-white fixed-top navbar-expand-md shadow-sm p-2 justify-content-center ">
       <div className="container-fluid">
         <a className="navbar-brand d-flex w-50 me-auto " href="#">
           <img
@@ -23,31 +24,31 @@ const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="navbar-collapse collapse w-100" id="collapsingNavbar3">
-          <ul className="navbar-nav w-100 justify-content-between">
-            <li className="nav-item navigation-link-active">
-              <NavLink to="/home/all" className="nav-link" data-testid="Home">
+          <ul className="navbar-nav w-100 justify-content-center">
+            <li className="nav-item navigation-header-link-active">
+              <NavLink to="/home/all" className="nav-link px-4" data-testid="Home">
                 {dashboadMenus[0]}
               </NavLink>
             </li>
             <li
-              className="nav-item navigation-link-active"
+              className="nav-item navigation-header-link-active"
               data-testid="Learning"
             >
               <NavLink
                 to="/learning"
-                className="nav-link"
+                className="nav-link px-4"
                 data-testid="learning"
               >
                 {dashboadMenus[1]}
               </NavLink>
             </li>
             <li
-              className="nav-item navigation-link-active"
+              className="nav-item navigation-header-link-active"
               data-testid="Community"
             >
               <NavLink
                 to="/community"
-                className="nav-link"
+                className="nav-link px-4"
                 data-testid="community"
               >
                 {dashboadMenus[2]}
@@ -86,15 +87,19 @@ const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
                 data-testid="ProfileCard"
               >
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink
+                    to="/home/all/profile"
+                    className="dropdown-item header-dropdown"
+                    data-testid="profile"
+                  >
                     My Profile
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item header-dropdown" href="#">
                     Contact 2nd Careers
                   </a>
                 </li>
@@ -105,7 +110,7 @@ const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
                 <li>
                   <NavLink
                     to="/"
-                    className="dropdown-item"
+                    className="dropdown-item header-dropdown"
                     data-testid="logout"
                   >
                     Logout
@@ -117,6 +122,7 @@ const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
         </div>
       </div>
     </nav>
+    </div>
   );
 };
 

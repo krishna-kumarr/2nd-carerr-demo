@@ -20,15 +20,16 @@ const FormInput = ({
   role,
   alt,
   valueFromProfessionalSignup,
-  showPassword
+  showPassword,
+  showConfirmPassword
 }) => {
   return (
     <div className={formInputDivClassName}>
       <FormLabel labelFieldName={formFieldName} />
-      <div className="input-group">
+      <div className={(formFieldName === "Password" || formFieldName === "Confirm Password") ? "input-group" : "input-group d-flex flex-column"}>
         <Input
           type={formInputType}
-          className="form-control"
+          className={(formFieldName === "Password" || formFieldName === "Confirm Password") ? "form-control" : "form-control w-100"}
           id={formInputId}
           ariaLabel={formAriaLabel}
           required={true}
@@ -39,28 +40,38 @@ const FormInput = ({
           role={role}
           alt={alt}
           value={valueFromProfessionalSignup}
-          
+
         />
+        {(formFieldName !== "Password" && formFieldName !== "Confirm Password") ?
+          <span
+            id="signup-error-message"
+            className="text-danger mt-2 signup-error-message professional-signup-error-message"
+          >
+            {formInputFieldError}
+          </span> : null
+        }
 
-        <span
-          id="signup-error-message"
-          className="text-danger mt-2 signup-error-message professional-signup-error-message"
-        >
-          {formInputFieldError}
-        </span>
+        {(formFieldName === "Password" || formFieldName === "Confirm Password") ? (
+          <React.Fragment className="d-flex flex-column">
+            <InputGroup
+              className="input-group-text bg-white"
+              id="visibile-icon"
+              reIcons={showPassword ?
+                <FaEye className="visible-eye" onClick={handleEyeClick} /> :
+                <FaEyeSlash className="visible-eye" onClick={handleEyeClick} />
+              }
+            />
+            <span
+              id="signup-error-message"
+              className="text-danger mt-2 signup-error-message professional-signup-error-message"
+            >
+              {formInputFieldError}
+            </span>
+          </React.Fragment>
 
-        {(formFieldName === "Password" || formFieldName === "Confirm Password")   ? (
-          <InputGroup
-            className="input-group-text bg-white"
-            id="visibile-icon"
-            reIcons={showPassword ?  
-                              <FaEye className="visible-eye" onClick={handleEyeClick} />: 
-                              <FaEyeSlash className="visible-eye" onClick={handleEyeClick} />
-                  }
-          />
         ) : null}
       </div>
- 
+
     </div>
   );
 };

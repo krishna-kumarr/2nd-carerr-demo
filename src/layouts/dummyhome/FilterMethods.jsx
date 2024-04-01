@@ -1,5 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Input from "../../components/Input/Input";
+import InputGroup from "../../components/Input/InputGroup";
+import { IoIosSearch } from "react-icons/io";
 
 const FilterMethods = () => {
   const [search, setSearch] = React.useState("");
@@ -18,10 +21,10 @@ const FilterMethods = () => {
   }
 
   return (
-    <div className="container-fluid dashboard-menus-container">
-      <div className="row mt-5 pt-4 py-2">
+    <div className="container-fluid dashboard-menus-container ">
+      <div className="row px-3 pt-4">
         <div className="col-lg-6">
-          <ul className="nav justify-content-around bg-white m-1 rounded-2 select-category">
+          <ul className="nav justify-content-around bg-white m-1 rounded-2 select-category filter-side-butons">
             <li
               className="nav-item navigation-link-active"
               data-testid="All"
@@ -49,24 +52,22 @@ const FilterMethods = () => {
         </div>
 
         <div className="col-lg-6">
-          <div className="d-flex m-1">
-            <input
-              className="form-control form-control-lg w-75 searchInput border-0"
-              type="text"
-              placeholder="Seach Company, title"
-              aria-label="default input example"
-              value={search}
-              onChange={handleSearchInput}
-              data-testid="searchResult"
+          <div className="d-flex m-1 position-relative">
+            <InputGroup
+              className="home-search-icon fs-5"
+              reIcons={<IoIosSearch />}
             />
-            <button
-              type="button"
-              className="btn btn-lg btn-brand-color w-25 ms-3"
-              data-testid="SearchButton"
-              onClick={handleSearchButtonClick}
-            >
-              Search
-            </button>
+
+            <Input
+              type="text"
+              className="form-control form-control-lg searchInput border-0 px-5"
+              placeHolder="Seach Company, title"
+              ariaLabel="default input example"
+              testId="searchResult"
+              functionOnchange={handleSearchInput}
+            />
+
+
           </div>
         </div>
       </div>

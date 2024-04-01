@@ -8,45 +8,42 @@ import { useNavigate } from "react-router-dom";
 
 const ResetPasswordForm = () => {
   const pageNavigate = useNavigate();
-  const [err, setErr] = useState(false)
-  const [ErrMessage,setErrMessage] = useState('')
-  const [usersDetails, setUsersDetails] = useState({
-    email_id: '',
-  })
+  const [email,setEmail] = useState('')
+  const [errors, setErrors] = useState({});
 
-  const handlekeydown = (e) =>{
-    if(e.key === "Enter"){
+  const handlekeydown = (e) => {
+    if (e.key === "Enter") {
       e.preventDefault()
     }
   }
 
-  const handleSubmit = () => {
-    if (usersDetails.email_id === '') {
-      setErr(true)
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setErrors({})
+    let newErrors = {};
+
+    if(!email){
+      newErrors.email = "Email is required."
+    } else if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+      newErrors.email = 'Invalid email format.';
+    }
+
+
+    if (Object.keys(newErrors).length === 0) {
+      pageNavigate("/reset-password");
     } else {
-      if (usersDetails.email_id.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
-        pageNavigate("/reset-password")
-        setErr(false)
-      } else {
-        setErrMessage("Please enter a valid mail")
-        setErr(true)
-      }
+      setErrors(newErrors);
     }
   }
 
 
-  return (
-    <form>
-      {
-        err && ErrMessage!=='' ?
-          <Label
-            className="mb-3 text-danger"
-            title={ErrMessage}
-          />
-          :
-          null
-      }
 
+
+  return (
+    <form onSubmit={handleSubmit}>
+      
       <div className="input-group mb-3 login-form">
         <InputGroup
           className="login-input-group-text input-group-text border border-0"
@@ -60,29 +57,18 @@ const ResetPasswordForm = () => {
           ariaLabel="email"
           testId="reset-email"
           name="email_id"
-          functionOnchange={(e)=>setUsersDetails({...usersDetails,[e.target.name]: e.target.value})}
+          functionOnchange={(e)=>setEmail(e.target.value)}
           functionOnkeyDown={handlekeydown}
         />
+        {errors.email && <Label className="py-2 text-danger col-12" title={errors.email} />}
       </div>
-
-      {
-        err && usersDetails.email_id === '' ?
-          <Label
-            className="mb-3 text-danger"
-            title="Please enter an email address."
-          />
-          :
-          null
-      }
-
 
       <div className="d-grid mt-3">
         <Button
           className="btn btn-lg  btn-login fw-bold mb-2"
           title="Reset password"
-          buttonType="button"
+          buttonType="submit"
           testId="reset-button"
-          functionOnchange={handleSubmit}
         />
       </div>
     </form>

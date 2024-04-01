@@ -9,6 +9,7 @@ import ProfessionalManualSignup from "./views/professional/ProfessionalManualSig
 import ProfessionalSocialMediaSignup from "./views/professional/ProfessionalSocialMediaSignup";
 import LearningPage from "./views/professional/LearningPage";
 import CommunityPage from "./views/professional/CommunityPage";
+import Profile from "./layouts/Profile";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
         <Route path="applied" element={<Home />} />
         <Route path="saved" element={<Home />} />
       </Route>
+
+      <Route path="/home/all/profile" element={<Profile/>}/>
 
       <Route path="/learning" element={<LearningPage/>}/>
       <Route path="/community" element={<CommunityPage/>}/>

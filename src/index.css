@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;  
+  font-family: "Inter", sans-serif;
   /* background-color: #f3f6f9; */
 }
 
@@ -15,18 +15,20 @@ body {
 
 
 
-.btn-brand-color{
+.btn-brand-color {
   background-color: #f58b0e;
   color: #f6f6f6;
   font-weight: 500;
 }
-.btn-brand-color:hover{
+
+.btn-brand-color:hover {
   background-color: #e38212;
   color: #f6f6f6;
   font-weight: 500;
 }
+
 .searchInput::placeholder {
-   font-size: 0.9rem !important;
+  font-size: 0.9rem !important;
 }
 
 .login {
@@ -37,10 +39,11 @@ body {
 /* Card Component CSS */
 
 
-.select-category  li a{
+.select-category li a {
   color: grey;
   font-weight: 500;
 }
+
 .bg-image {
   background-image: url("../src/assets/images/loginSideImage.png");
   background-size: cover;
@@ -50,13 +53,16 @@ body {
 .header-nav {
   min-height: 10vh;
 }
+
 .login-heading {
   font-weight: 600;
   text-align: center;
 }
+
 .signup-heading {
   font-weight: 600;
 }
+
 .btn-login {
   font-size: 1.1rem;
   letter-spacing: 0.05rem;
@@ -64,12 +70,14 @@ body {
   background-color: #f58b0e;
   color: #ffffff;
 }
+
 .btn-login:hover {
   background-color: #e38212;
   color: #ffffff;
 }
+
 .btn-linkedin {
-  background-color: #0077b5; 
+  background-color: #0077b5;
 }
 
 
@@ -78,17 +86,20 @@ body {
   background-color: #106d9f;
 }
 
-.login-form > .form-control {
+.login-form>.form-control {
   background-color: #f6f6f6;
   padding: 1.5rem 0.75rem !important;
 }
+
 .label-text {
   color: lightslategray;
 }
+
 .login-input-group-text {
   background-color: #f3f6f9;
   padding: 1.5rem !important;
 }
+
 .brand-color {
   color: #e38212;
   font-weight: 900;
@@ -127,11 +138,19 @@ input.login-input:focus {
   background-size: cover;
   background-position: center;
 }
-.signup-error-message{
+
+.signup-error-message {
   font-size: 0.8rem;
 }
+
 .social-signup:hover {
   cursor: pointer;
+}
+
+.reset-password-bg-image {
+  background-image: url("../src/assets/images/resetPasswordSideImage.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .forget-password-bg-image {
@@ -139,28 +158,34 @@ input.login-input:focus {
   background-size: cover;
   background-position: center;
 }
+
 .role-selectors-bg-image {
   background-image: url("../src/assets/images/roleSelectorSideImage.png");
   background-size: cover;
   background-position: center;
 }
-.professional-bg-image{
+
+.professional-bg-image {
   background-image: url("../src/assets/images/professionalSideImage.png");
   background-size: cover;
   background-position: center;
 }
-.form-check-label{
+
+.form-check-label {
   font-size: 0.75rem;
   color: #616161;
 }
-.signup-forms input:focus{
+
+.signup-forms input:focus {
   box-shadow: none;
   border: 1px solid #616161;
 }
-.signup-forms input[type="date"]::placeholder{
+
+.signup-forms input[type="date"]::placeholder {
   font-size: 0.1rem;
-  
+
 }
+
 /* .dashboard-background{
   background-color: #f3f6f9;
 }
@@ -357,173 +382,340 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* krishna kumar css edits */
 
 /* newly added job description component(jobDescription.jsx) css */
-.job-description{
-  color: #606060ce;
+.job-description {
+  color: #595959;
   font-size: 16px;
   font-weight: 400;
-  line-height: 2rem;
+  line-height: 1.7rem;
   letter-spacing: 0.2px;
   word-spacing: 2px;
-  }
-  .company-details-icon{
+}
+
+.company-details-icon {
+  color: #595959;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+}
+
+.dashboard-responsibility-ul {
   color: #020101;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.8rem;
-  }
-  .dashboard-responsibility-ul{
+}
+
+.dashboard-skills-ul {
   color: #020101;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.8rem;
-  }
-  .dashboard-skills-ul{
+}
+
+.dashboard-job-post-icons {
   color: #020101;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.8rem;
-  }
-  .dashboard-job-post-icons{
+}
+
+.dashboard-additional-information-ul {
   color: #020101;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.8rem;
-  }
-  .dashboard-additional-information-ul{
-  color: #020101;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.8rem;
-  }
-  .job-heading{
+}
+
+.job-heading {
   font-size: 1.3rem;
   font-weight: 700;
-  }
-  .job-posted-on{
+}
+
+.job-posted-on {
   color: #020101;
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.8rem;
-  }
-  
-  /* newly added job card component(jobCard.jsx) css */
-  .job-card-component-heading{
+}
+
+.job-title-weight {
+  font-size: 1rem;
   font-weight: 700;
-  }
-  .job-card-description{
-    color: #606060ce;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 2rem;
-    letter-spacing: 0.2px;
-    word-spacing: 2px;
-  }
-  .job-card-posted-time{
+}
+
+.home-search-icon {
+  position: absolute;
+  top: .5rem;
+  left: 1rem;
+}
+
+.searchInput.form-control:focus {
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+
+
+
+/* newly added job card component(jobCard.jsx) css */
+.job-card-component-heading {
+  font-weight: 700;
+}
+
+.job-card-description {
+  color: #595959;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7rem;
+  letter-spacing: 0.2px;
+  word-spacing: 2px;
+}
+
+.job-card-posted-time {
   color: #020101;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.8rem;
-  }
-  .card-company-details-icon{
+}
+
+.card-company-details-icon {
   color: #020101;
-  }
-  
-  /* newly added job workspace component(jobworkspace.jsx) css */
-  .filter-results{
+}
+
+
+
+
+
+/* newly added job workspace component(jobworkspace.jsx) css */
+.filter-results {
   font-size: 0.9rem;
-  }
-  
-  /* newly added job card component(jobCard.jsx) css */
-  .filter-section{
+}
+
+
+
+/* newly added job card component(jobCard.jsx) css */
+.filter-section {
   font-size: 0.9rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  }
-  .filter-section.form-select option{
-  padding: 15px!important;
-  }
-  .filter-section.form-control:focus {
-  border-color: #020101;;
+}
+
+.filter-section.form-select option {
+  padding: 15px !important;
+}
+
+.filter-section.form-select:focus {
+  border-color: #020101;
   outline: 0;
   box-shadow: none;
-  }
-  .job-filter-heading span{
+}
+
+.job-filter-heading span {
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.8rem;
-  }
-  .job-filter-sub-headings{
+}
+
+.job-filter-sub-headings {
   font-size: 1rem;
-  font-weight:700;
+  font-weight: 700;
   line-height: 1.8rem;
-  }
-  .form-check-label{
+}
+
+.form-check-label {
   font-size: 0.9rem;
-  }
-  
-  /* newly added filter method component(filtermethod.jsx) css */
-  .filter-menus{
+}
+
+.card-inner-details {
+  font-size: .8rem;
+}
+
+.filter-side-butons {
+  padding: .13rem 0;
+}
+
+
+
+
+
+
+
+/* newly added filter method component(filtermethod.jsx) css */
+.filter-menus {
   padding: 0.13rem 0;
-  }
-  
-  /* width for header seeting-row-height */
-  :root{
-  --nav-height:4rem;
-  --dashboard-menu:5rem;
-  }
-  .navbar-height{
+}
+
+/* width for header seeting-row-height */
+:root {
+  --nav-height: 4rem;
+  --dashboard-menu: 5.5rem;
+  --homePage-mainContent-height: calc(100vh - (var(--nav-height) + var(--dashboard-menu)));
+}
+
+.navbar-height {
   height: var(--nav-height);
-  }
-  .setting-row-height{
+}
+
+.setting-row-height {
   height: calc(100vh - (var(--nav-height) + var(--dashboard-menu)));
-  }
-  ::-webkit-scrollbar {
+}
+
+::-webkit-scrollbar {
   width: 0px;
   height: 0px;
-  }
-  
-  /* job description sticky height */
-  .JobDescription-sticky-top-height{
-  top: 0;
-  padding: 1.5rem;
-  }
+}
 
+.profile-bg {
+  background-color: #f3f6f9;
+}
+
+.learning-page-height {
+  height: calc(100vh - var(--nav-height));
+}
+
+.learning-page-bg {
+  background-color: #f3f6f9;
+}
+
+.community-page-height {
+  height: calc(100vh - var(--nav-height));
+}
+
+.community-page-bg {
+  background-color: #f3f6f9;
+}
+
+
+/* job description sticky height */
+.JobDescription-sticky-top-height {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.jobDescription-height {
+  height: calc(var(--homePage-mainContent-height) - 14rem);
+}
 
 /* professional homepage background color  */
-.homePage-backgroundColor{
+.homePage-backgroundColor {
   background-color: #f3f6f9;
 }
 
 
 
 /* navlink active  */
-.navigation-link-active{
+.navigation-link-active {
   padding: 0 2rem;
 }
-.navigation-link-active a{
+
+.navigation-link-active a {
   text-decoration: none;
   color: gray;
+
 }
+
+.navigation-link-active a:hover {
+  color: gray !important;
+}
+
 .navigation-link-active a.active {
-  border-bottom: 3px solid rgba(255,193,7,1);
   font-weight: 600;
+  color: gray !important;
+  position: relative;
 }
+
+.navigation-link-active a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  height: 3px;
+  width: 90%;
+  background-color: #ff8a04c4;
+  animation: border-bottom .4s ease;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+@keyframes border-bottom {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+
+  }
+}
+
+
+.navigation-header-link-active a.active {
+  font-weight: 600;
+  transition: all 2s linear;
+
+}
+
+.header-dropdown.dropdown-item:hover {
+  background-color: #ff8a04c4;
+  color: white;
+}
+
+.header-dropdown.dropdown-item.active {
+  background-color: #ff8a04c4;
+  color: white;
+}
+
+
+
+
+/* video js  */
+.video-js {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* login page and reset page input field  */
+.form-control.password-field-focus:focus {
+  border-color: transparent !important;
+}
+
+
+/* profile page  */
+.profile-side-headers {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.profile-descriptions {
+  color: #595959;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7rem;
+  letter-spacing: 0.2px;
+  word-spacing: 2px;
+}
+
+
 
 
 
 /* pradeep  */
 
 /* Professional Signup========================================================================= */
-.professional-signup-error-message{
-  display: none ;
+.professional-signup-error-message {
+  display: none;
 }
 
-input:invalid[focused="true"] ~ .professional-signup-error-message{
-  display: block ;
+input:invalid[focused="true"]~.professional-signup-error-message {
+  display: block;
 }
 
-.react-tel-input .form-control{
+.react-tel-input .form-control {
   /* background-color: red !important; */
   width: 100% !important;
 }
@@ -534,4 +726,36 @@ input:invalid[focused="true"] ~ .professional-signup-error-message{
 
 .react-datepicker-wrapper {
   width: 100%;
+}
+
+
+
+
+
+
+
+
+/* SK */
+/* learning & Community */
+.learning-img-height,
+.community-img-height {
+  height: 13rem;
+}
+
+.learning:active {
+  background-color: #e38212;
+}
+
+.card-text {
+  color: #595959;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  letter-spacing: 0.2px;
+  word-spacing: 2px;
+  /* margin: 0 1rem; */
+}
+
+.learningTitle {
+  font-weight: 600;
 }

@@ -85,7 +85,7 @@ describe("Checking all fields", () => {
         const emailIDEl = screen.getByTestId("emailID");
         fireEvent.change(emailIDEl, {target : { value : "te"}}); 
         expect(emailIDEl.value).not.toMatch(/^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/i);
-        expect(screen.queryByText("Email should be in correct format")).toBeInTheDocument();
+        expect(screen.queryByText("Email should be in correct format (For ex:username@example.com)")).toBeInTheDocument();
 
         const countryEl = screen.getByAltText("country");
         fireEvent.change(countryEl, {target : { value : "to"}});  
@@ -100,12 +100,12 @@ describe("Checking all fields", () => {
         const passwordEl = screen.getByAltText("password");
         fireEvent.change(passwordEl, {target : { value : "te"}}); 
         expect(passwordEl.value).not.toMatch(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/i);
-        expect(screen.queryByText("Password should contain 8-20 characters and it should have 1 special character,1 number")).toBeInTheDocument();
+        expect(screen.queryByText("Password should contain 8-20 characters and it should have 1 letter,1 number and 1 special character")).toBeInTheDocument();
 
         const confirmPasswordEl = screen.getByAltText("confirmPassword");
         fireEvent.change(confirmPasswordEl, {target : { value : "tes"}}); 
         expect(confirmPasswordEl.value).not.toEqual(passwordEl.value);
-        expect(screen.queryByText("Confirm Password does not match")).toBeInTheDocument();
+        expect(screen.queryByText("Confirm Password should match with Password")).toBeInTheDocument();
     })
 
     test("values change during onChange event", () => {

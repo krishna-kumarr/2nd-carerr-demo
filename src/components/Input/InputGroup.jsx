@@ -1,8 +1,8 @@
 import React from "react";
 
-const InputGroup = ({ className, id, reIcons }) => {  
+const InputGroup = ({ className, id, reIcons, onClick }) => {  
   return (
-    <span className={className} id={id}>
+    <span className={className} id={id} onClick={onClick}>
       {reIcons}
     </span>
      

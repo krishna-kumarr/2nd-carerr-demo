@@ -275,7 +275,7 @@ const JobFilter = () => {
         </div>
       </div>
       <div>
-        <button type="button" className="btn btn-success w-100">
+        <button type="button" className="btn btn-brand-color w-100">
           Apply Filter
         </button>
       </div>

@@ -8,7 +8,7 @@ const RoleSelection = () => {
     <div className="container-fluid ps-md-0">
       <div className="row g-0">
         <EntryLevelLeftSideContainer bgImage="role-selectors-bg-image" />
-        <EntryLevelRightSideContainer selectionType={<RoleSelectionLayout/>} formFooterQuestion="Already have an account?" footerNavigationLink="/" footerNavigationTestId="signin-link" footerNavigateLinkContent="sign in"/>
+        <EntryLevelRightSideContainer selectionType={<RoleSelectionLayout/>} formFooterQuestion="Already have an account?" footerNavigationLink="/" footerNavigationTestId="signin-link" footerNavigateLinkContent="Sign in"/>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import { FaShare } from "react-icons/fa6";
 const JobWorkSpace = () => {
   return (
     <div className="container-fluid">
-      <div className="row mt-1 setting-row-height overflow-hidden">
+      <div className="row mt-1 setting-row-height p-3 overflow-hidden">
 
         <div className="col-lg-2 col-md-2 d-none d-md-inline h-100 overflow-scroll">
           <div className="card w-100 border-0 rounded-4 mb-3">
@@ -25,7 +25,7 @@ const JobWorkSpace = () => {
               <label className="filter-results">Showing : 1275 filtered results</label>
             </div>
             <div className="col">
-              <select className="form-select border-0 outline-none" aria-label="Default select example">
+              <select className="form-select border-0 outline-none filter-section" aria-label="Default select example">
                 <option>Open this select menu</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -33,52 +33,52 @@ const JobWorkSpace = () => {
               </select>
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
           </div>
-          <div className="card w-100 mt-3 rounded-4 border-0">
+          <div className="card w-100 mt-2 rounded-4 border-0">
             <div className="card-body">
               <JobCard />
             </div>
@@ -154,9 +154,9 @@ const JobWorkSpace = () => {
         </div>
 
         <div className="d-none d-md-inline col-md-6 col-lg-6 h-100 overflow-scroll">
-          <div className="card w-100 border-0 bg-transparent mb-3">
-            <div className="card-body p-0">
-              <div className="col-12 sticky-top JobDescription-sticky-top-height bg-white rounded-4">
+          <div className="card w-100 border-0 bg-transparent ">
+            <div className="card-body p-0 ">
+              <div className="col-12 JobDescription-sticky-top-height bg-white rounded-4 mb-2">
                 <div className="d-flex align-items-center my-2">
                   <div className="flex-shrink-0 ms-2">
                     <img src={Logo} alt="..." width={52} height={52} />

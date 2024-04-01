@@ -7,6 +7,13 @@ const resetPasswordSideContainerImage = require("../assets/images/resetPasswordS
 const roleSelectionSideContainerImage = require("../assets/images/roleSelectorSideImage.png")
 const professionalSignUpSideContainerImage = require("../assets/images/professionalSideImage.png")
 const logo = require("../assets/images/secondCareersLogo.png")
+const professional = require("../assets/images/professional.png");
+const partner = require("../assets/images/partner.png")
+const employer = require("../assets/images/employer.png")
+const learningImage = require("../assets/images/learningImage.jpg")
+const learningTwo = require("../assets/images/learningtwo.png")
+const learningThree = require("../assets/images/learningthree.jpg")
+
 
 export default {
     loginSideContainerImage,
@@ -17,5 +24,11 @@ export default {
     resetPasswordSideContainerImage,
     roleSelectionSideContainerImage,
     professionalSignUpSideContainerImage,
-    logo
+    logo,
+    professional,
+    partner,
+    employer,
+    learningImage,
+    learningTwo,
+    learningThree
 }

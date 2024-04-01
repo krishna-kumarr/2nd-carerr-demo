@@ -6,65 +6,65 @@ import Image from '../../utils/images.js'
 const CommunityPage = () => {
     const professionalPageDashboardMenu = ['Home', 'Learning', 'Community']
 
-  return (
-    <>
-         <DashboardNavbar profileImage="https://github.com/mdo.png" profileName="George Martin" dashboadMenus={professionalPageDashboardMenu} />
-            <div className="container">
-            <div className="row row-cols-1 row-cols-md-3 g-4">
-                <div className="col">
-                    <CardWithImage cardImage={Image.learningImage}
-                    cardTitle="Community"
-                    cardText=" Empowering Experienced semi-retired or retired
-                    Professionals with Fulfilling Opportunities – CXOs,
-                    HR Professionals; Finance Professionals, Sales &
-                    Marketing Professionals, Tech Experts, and Board"
-                    carTextClassName="role-selection-description"
-                    cardParaTestId="professionalTestId"
-                    cardButtonTestId="cardButton" 
-                    role="learningAndCommunity"
-                    firstButton_Name="Join Community"
-                    secondButton_Name="Share"
-                    firstCardColor="brand-color"
-                    secondCardColor="outline-secondary"/>
-                </div>
-                <div className="col">
-                <CardWithImage cardImage={Image.learningTwo}
-                    cardTitle="Community"
-                    cardText=" Empowering Experienced semi-retired or retired
-                    Professionals with Fulfilling Opportunities – CXOs,
-                    HR Professionals; Finance Professionals, Sales &
-                    Marketing Professionals, Tech Experts, and Board"
-                    carTextClassName="role-selection-description"
-                    cardParaTestId="professionalTestId"
-                    cardButtonTestId="cardButton" 
-                    role="learningAndCommunity"
-                    firstButton_Name="Join Community"
-                    secondButton_Name="Share"
-                    firstCardColor="brand-color"
-                    secondCardColor="outline-secondary"/>
-                </div>
-                <div className="col">
-                <CardWithImage cardImage={Image.learningThree}
-                    cardTitle="Community"
-                    cardText=" Empowering Experienced semi-retired or retired
-                    Professionals with Fulfilling Opportunities – CXOs,
-                    HR Professionals; Finance Professionals, Sales &
-                    Marketing Professionals, Tech Experts, and Board"
-                    carTextClassName="role-selection-description"
-                    cardParaTestId="professionalTestId"
-                    cardButtonTestId="cardButton" 
-                    role="learningAndCommunity"
-                    firstButton_Name="Join Community"
-                    secondButton_Name="Share"
-                    firstCardColor="brand-color"
-                    secondCardColor="outline-secondary"
-                    />
+    return (
+        <>
+            <DashboardNavbar profileImage="https://github.com/mdo.png" profileName="George Martin" dashboadMenus={professionalPageDashboardMenu} />
 
+            <div className="community-page-height community-page-bg">
+                <div className="container pt-5">
+                    <div className="row row-cols-1 row-cols-md-3 g-4 mt-0">
+                        <div className="col">
+                            <CardWithImage cardImage={"https://coworkingers.com/wp-content/uploads/2020/06/awfis-1.jpg"}
+                                cardTitle="Community"
+                                cardTitleStyle="learningTitle"
+                                imageClassName="rounded-4 community-img-height"
+                                cardText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, eveniet. Asperiores itaque quisquam exercitationem praesentium laboriosam culpa, ab beatae facere esse. Dolores dicta tempore"
+                                carTextClassName="role-selection-description"
+                                cardParaTestId="professionalTestId"
+                                cardButtonTestId="cardButton"
+                                role="learningAndCommunity"
+                                firstButton_Name="Join Community"
+                                secondButton_Name="Share"
+                                firstCardColor="brand-color"
+                                secondCardColor="outline-secondary" />
+                        </div>
+                        <div className="col">
+                            <CardWithImage cardImage={"https://coworkingers.com/wp-content/uploads/2020/06/awfis-1.jpg"}
+                                cardTitle="Community"
+                                cardTitleStyle="learningTitle"
+                                imageClassName="rounded-4 community-img-height"
+                                cardText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, eveniet. Asperiores itaque quisquam exercitationem praesentium laboriosam culpa, ab beatae facere esse. Dolores dicta tempore"
+                                carTextClassName="role-selection-description"
+                                cardParaTestId="professionalTestId"
+                                cardButtonTestId="cardButton"
+                                role="learningAndCommunity"
+                                firstButton_Name="Join Community"
+                                secondButton_Name="Share"
+                                firstCardColor="brand-color"
+                                secondCardColor="outline-secondary" />
+                        </div>
+                        <div className="col">
+                            <CardWithImage cardImage={"https://coworkingers.com/wp-content/uploads/2020/06/awfis-1.jpg"}
+                                cardTitle="Community"
+                                cardTitleStyle="learningTitle"
+                                imageClassName="rounded-4 community-img-height"
+                                cardText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, eveniet. Asperiores itaque quisquam exercitationem praesentium laboriosam culpa, ab beatae facere esse. Dolores dicta tempore"
+                                carTextClassName="role-selection-description"
+                                cardParaTestId="professionalTestId"
+                                cardButtonTestId="cardButton"
+                                role="learningAndCommunity"
+                                firstButton_Name="Join Community"
+                                secondButton_Name="Share"
+                                firstCardColor="brand-color"
+                                secondCardColor="outline-secondary"
+                            />
+
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default CommunityPage

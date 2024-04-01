@@ -20,7 +20,8 @@ const ProfessionalSignUpForm = (props) => {
     confirmPassword: ""
   })  
 
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
 
   const professionalSignupInputs = [
@@ -58,7 +59,7 @@ const ProfessionalSignUpForm = (props) => {
       type: "email",
       placeholder: "Email",
       label: "Email",
-      errorMessage: "Email should be in correct format",
+      errorMessage: "Email should be in correct format (For ex:username@example.com)",
       required: true,
       pattern: "^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$",
       className: "form-control",
@@ -128,7 +129,7 @@ const ProfessionalSignUpForm = (props) => {
       label: "Password",
       required: true,
       className: "form-control",
-      errorMessage: "Password should contain 8-20 characters and it should have 1 special character,1 number",
+      errorMessage: "Password should contain 8-20 characters and it should have 1 letter,1 number and 1 special character",
       pattern: "^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$",
       alt: "password",
       dataTestid: "password",
@@ -144,7 +145,7 @@ const ProfessionalSignUpForm = (props) => {
       label: "Confirm Password",
       required: true,
       className: "form-control",
-      errorMessage: "Confirm Password does not match",
+      errorMessage: "Confirm Password should match with Password",
       pattern: professionalSignupInputValues.password,
       alt: "confirmPassword"
 
@@ -167,7 +168,6 @@ const ProfessionalSignUpForm = (props) => {
 
   return (
     <form className="row signup-forms" >
-
       {
         professionalSignupInputs.map((professionalSignupInput) => {
           return (
@@ -195,7 +195,7 @@ const ProfessionalSignUpForm = (props) => {
                   </div>
                   :
                   <FormInput
-                    formInputDivClassName={professionalSignupInput.name === "emailID" ? "col-md-12 mt-2" : "col-md-6 mt-2"}
+                    formInputDivClassName={professionalSignupInput.name === "emailID" ? "col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-2" : "col-md-6 mt-2"}
                     formInputType={professionalSignupInput.type}
                     formInputId={professionalSignupInput.name}
                     formAriaLabel={professionalSignupInput.name}
@@ -233,7 +233,7 @@ const ProfessionalSignUpForm = (props) => {
 
           <label className="form-check-label" htmlFor="invalidCheck">
             I agree to all the <a href="#">Terms</a> and
-            <a href="#">Privacy policy</a>
+            <a href="#"> Privacy policy</a>
           </label>
           {/* <div className="text-danger signup-error-message">You must agree before submitting.</div> */}
         </div>

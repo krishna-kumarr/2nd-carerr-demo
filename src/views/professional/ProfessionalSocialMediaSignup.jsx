@@ -10,7 +10,7 @@ const ProfessionalSocialMediaSignup = () => {
     <div className="container-fluid ps-md-0">
       <div className="row g-0">
         <EntryLevelLeftSideContainer bgImage="professional-bg-image" />
-        <EntryLevelRightSideContainer formTitle="Google Signup" formWidth="col-lg-8 col-md-8" formName='login' formHeaderClassName="signup-heading" form={<ProfessionalSocialMediaForm/>} formFooterQuestion="Already have an account?" footerNavigationLink="/" footerNavigateLinkContent="sign in"/>
+        <EntryLevelRightSideContainer formTitle="Google Signup" formWidth="col-lg-8 col-md-8" formHeaderClassName="signup-heading" form={<ProfessionalSocialMediaForm/>} formFooterQuestion="Already have an account?" footerNavigationLink="/" footerNavigateLinkContent="Sign in"/>
       </div>
     </div>
   )
