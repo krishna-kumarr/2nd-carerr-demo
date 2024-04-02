@@ -10,6 +10,10 @@ import ProfessionalSocialMediaSignup from "./views/professional/ProfessionalSoci
 import LearningPage from "./views/professional/LearningPage";
 import CommunityPage from "./views/professional/CommunityPage";
 import Profile from "./layouts/Profile";
+import HomeAll from "./views/professional/HomeOptionsLayout/HomeAll";
+import HomeRecommended from "./views/professional/HomeOptionsLayout/HomeRecommended";
+import HomeApplied from "./views/professional/HomeOptionsLayout/HomeApplied";
+import HomeSaved from "./views/professional/HomeOptionsLayout/HomeSaved";
 
 function App() {
   return (
@@ -28,11 +32,11 @@ function App() {
       </Route>
 
 
-      <Route path="/home">
-        <Route path="all" element={<Home />} exact/>
-        <Route path="recommended" element={<Home />} />
-        <Route path="applied" element={<Home />} />
-        <Route path="saved" element={<Home />} />
+      <Route path="home" element={<Home />}>
+        <Route path="all" element={<HomeAll/>} exact/>
+        <Route path="recommended" element={<HomeRecommended />} />
+        <Route path="applied" element={<HomeApplied />} />
+        <Route path="saved" element={<HomeSaved />} />
       </Route>
 
       <Route path="/home/all/profile" element={<Profile/>}/>

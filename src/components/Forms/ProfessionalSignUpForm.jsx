@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormInput from "../Input/FormInput";
 import Input from "../Input/Input";
 import PhoneInput from "react-phone-input-2";
-import DateComponent from "../Date/DateComponent";
-import 'react-phone-input-2/lib/style.css';
-
+// import 'react-phone-input-2/lib/style.css';
+import 'react-phone-input-2/lib/material.css'
+import DateofBirth from "../Input/DateofBirth";
 
 const ProfessionalSignUpForm = (props) => {
 
@@ -18,10 +18,13 @@ const ProfessionalSignUpForm = (props) => {
     city: "",
     password: "",
     confirmPassword: ""
-  })  
+  })
+  
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
+ 
 
 
   const professionalSignupInputs = [
@@ -29,9 +32,9 @@ const ProfessionalSignUpForm = (props) => {
       id: 1,
       name: "firstName",
       type: "text",
-      placeholder: "FirstName",
-      label: "FirstName",
-      errorMessage: "First Name should be 3-30 characters and it shouldn't include special characters",
+      placeholder: "First Name",
+      label: "First Name",
+      errorMessage: "Min 3-30 characters and avoid symbols",
       required: true,
       pattern: "^[A-Za-z0-9]{3,16}$",
       className: "form-control",
@@ -44,8 +47,9 @@ const ProfessionalSignUpForm = (props) => {
       name: "lastName",
       type: "text",
       placeholder: "Lastname",
-      label: "Lastname",
-      errorMessage: "Last Name should be 3-16 characters and it shouldn't include special characters",
+      label: "Last Name",
+      errorMessage: "Min 3-30 characters and avoid symbols",
+      // errorMessage: "Last Name should be 3-30 characters and it shouldn't include special characters",
       required: true,
       pattern: "^[A-Za-z0-9]{3,16}$",
       className: "form-control",
@@ -59,7 +63,7 @@ const ProfessionalSignUpForm = (props) => {
       type: "email",
       placeholder: "Email",
       label: "Email",
-      errorMessage: "Email should be in correct format (For ex:username@example.com)",
+      errorMessage: "Please enter a valid email address",
       required: true,
       pattern: "^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$",
       className: "form-control",
@@ -90,6 +94,8 @@ const ProfessionalSignUpForm = (props) => {
       className: "form-control",
       alt: "dateOfBirth",
       dataTestid: "dateOfBirth",
+      errorMessage: "Date of Birth should be selected",
+
     },
     {
       id: 6,
@@ -140,7 +146,7 @@ const ProfessionalSignUpForm = (props) => {
     {
       id: 9,
       name: "confirmPassword",
-      type: showPassword ? "text" : "password",
+      type: showConfirmPassword ? "text" : "password",
       placeholder: "Confirm Password",
       label: "Confirm Password",
       required: true,
@@ -162,8 +168,12 @@ const ProfessionalSignUpForm = (props) => {
     setProfessionalSignupInputValues({ ...professionalSignupInputValues, [e.target.name]: e.target.value })
   }
 
-  const onClick = () => {
+  const onClickOne = () => {
     setShowPassword(!showPassword)
+  }
+
+  const onClickTwo = () => {
+    setShowConfirmPassword(!showConfirmPassword)
   }
 
   return (
@@ -174,24 +184,39 @@ const ProfessionalSignUpForm = (props) => {
             <React.Fragment key={professionalSignupInput.id}>
               {professionalSignupInput.name === "mobileNumber" ?
                 <div className="col-md-6 mt-2  ">
-                  <label className="mb-2">Mobile Number</label>
-                  <PhoneInput
-                    className="mobileComp w-100"
-                    country={'in'}
-                    dataTestid="mobileNumber"
-                    countryCodeEditable={false}
-                    enableSearch
-                    onChange={(e) => setProfessionalSignupInputValues({ ...professionalSignupInputValues, 'mobileNumber': e })}
-                    inputProps={{
-                      alt: 'mobileNumber',
-                    }}
-                  />
+
+
+                  <div class="form-floating">
+                    <PhoneInput
+                      id="floatingInput"
+                      specialLabel="Mobile Number"
+                      country={'in'}
+                      dataTestid="mobileNumber"
+                      countryCodeEditable={false}
+                      enableSearch
+                      onChange={(e) => setProfessionalSignupInputValues({ ...professionalSignupInputValues, 'mobileNumber': e })}
+                      inputProps={{
+                        alt: 'mobileNumber',
+                        type: 'tel',
+                        placeholder: 'Mobile Number',
+                      }}
+                      
+
+                    />
+                  </div>
+
+                  <div
+                    id="signup-error-message"
+                    className="text-danger mt-2 signup-error-message professional-signup-error-message"
+                  >
+                    {professionalSignupInput.errorMessage}
+                  </div>
                 </div>
+
                 :
                 professionalSignupInput.name === "dateOfBirth" ?
                   <div className="col-md-6 mt-2 ">
-                    <label className="mb-2" alt={professionalSignupInput.name}>Date of Birth</label>
-                    <DateComponent id="date-pick"/>
+                    <DateofBirth />
                   </div>
                   :
                   <FormInput
@@ -210,8 +235,8 @@ const ProfessionalSignUpForm = (props) => {
                     dataTestid={professionalSignupInput.dataTestid}
                     role={professionalSignupInput.role}
                     alt={professionalSignupInput.alt}
-                    handleEyeClick={onClick}
-                    showPassword={showPassword}   
+                    handleEyeClick={professionalSignupInput.name === "password" ?  onClickOne : null || professionalSignupInput.name === "confirmPassword" ?  onClickTwo : null}
+                    showPassword={professionalSignupInput.name === "password" ?  showPassword : null || professionalSignupInput.name === "confirmPassword" ?  showConfirmPassword : null}
                   />
               }
             </React.Fragment>
@@ -247,3 +272,7 @@ const ProfessionalSignUpForm = (props) => {
 };
 
 export default ProfessionalSignUpForm;
+
+
+
+

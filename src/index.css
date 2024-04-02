@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap");
 
-
+*{
+  font-family: "Inter", sans-serif;
+}
 
 
 body {
@@ -32,7 +34,12 @@ body {
 }
 
 .login {
-  min-height: 90vh;
+  height: 90vh;
+  /* overflow-y: auto; */
+}
+.login-content-container {
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 
@@ -606,9 +613,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 /* navlink active  */
-.navigation-link-active {
-  padding: 0 2rem;
-}
+
 
 .navigation-link-active a {
   text-decoration: none;
@@ -700,15 +705,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   word-spacing: 2px;
 }
 
-
-
-
+.img-upload-plus-icon{
+  position: absolute;
+  right: 28%;
+  bottom: -2%;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress{
+  border-radius: 1.2rem;
+}
+.progress-bar-color{
+  background-color: #0cbc0c;
+  font-weight: 600;
+  border-radius: 1.2rem;
+}
 
 /* pradeep  */
 
 /* Professional Signup========================================================================= */
 .professional-signup-error-message {
   display: none;
+  /* visibility: hidden; */
 }
 
 input:invalid[focused="true"]~.professional-signup-error-message {
@@ -716,9 +739,61 @@ input:invalid[focused="true"]~.professional-signup-error-message {
 }
 
 .react-tel-input .form-control {
-  /* background-color: red !important; */
   width: 100% !important;
+  border-radius: 5px !important;
 }
+.react-tel-input .form-control:hover {
+  outline: none;
+  border: 1px solid #ced4da !important;
+}
+
+.react-tel-input .special-label {
+  position: absolute;
+  z-index: 1;
+  top: -7px;
+  left: 10px !important;
+  display: block;
+  background: white;
+  padding: 0 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  color: #6c757d;
+}
+.react-tel-input .form-control:focus {
+  outline: none !important;
+  border: 1px solid #ced4da !important;
+  transition: box-shadow ease .25s, border-color ease .25s !important;
+  box-shadow: none !important;
+  border: 1px solid #616161 !important;
+}
+/* .react-tel-input .form-control:focus {
+  outline: none !important;
+  border: none;
+  transition: box-shadow ease .25s, border-color ease .25s !important;
+}
+.react-tel-input .form-control:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+
+.react-tel-input .form-control:focus+div:before {
+  color: #1976d2
+}
+
+.react-tel-input .form-control.invalid-number {
+  border: 1px solid #f44336
+}
+
+.react-tel-input .form-control.invalid-number:focus {
+  box-shadow: 0 0 0 1px #f44336
+}
+
+.react-tel-input .form-control.invalid-number+div:before {
+  content: 'Error';
+  display: none;
+  color: #f44336;
+  width: 27px
+} */
 
 .react-datepicker__input-container {
   width: inherit;
@@ -728,8 +803,49 @@ input:invalid[focused="true"]~.professional-signup-error-message {
   width: 100%;
 }
 
+.user-form-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.user-form-group .form-control {
+  font-size: 1rem;
+  padding: .7rem;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  z-index: 0 !important;
+}
+
+.user-form-group .form-control:focus {
+  border-color: #7f7f7f;
+  outline: 0;
+  /* box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25); */
+}
+
+.user-form-group .form-control:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.user-form-group label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: #495057;
+  font-size: 1rem;
+  transition: all 0.1s ease-in-out;
+  pointer-events: none;
+  background: #fff;
+  padding: 0 0.4rem;
+}
 
 
+.react-tel-input .form-control{
+  padding: .7rem 3.5rem  !important; 
+  margin-bottom: 1rem;
+}
 
 
 
@@ -758,4 +874,233 @@ input:invalid[focused="true"]~.professional-signup-error-message {
 
 .learningTitle {
   font-weight: 600;
+}
+
+
+/* custom dropdownmenu */
+
+.customDropdown .dropdown-menu {
+  width: 300px !important;
+  max-height: 450px !important;
+  overflow-y: auto;
+}
+#dropdownMenuButton1{
+  width: 300px !important;
+}
+.customDropdown-difficulty-level ul{
+  min-width: 100% !important;
+  max-height: 450px !important;
+  overflow-y: auto;
+}
+
+.customDropdown .dropdown-menu .no-history{
+  padding: 0 15px;
+  width: 100%;
+}
+.customDropdown .dropdown-menu li{
+  padding: 0;
+}
+.customDropdown .dropdown-menu .dropdown-item:hover{
+    background: #e38212;
+    color: #fff;
+    transition: 0.05s linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --lightblue : #e3f2fd;
+    --orange-bg-filter:#e38212;
+}
+.responsive-filter{
+    position: fixed;
+    bottom: 5rem;
+    right: 40px;
+    background-color: #fff;
+    width: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: all 0.2s linear ;
+}
+.responsive-filter ::-webkit-scrollbar{
+    width: 0;
+}
+.show-responsive-filter .responsive-filter{
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.2s linear ;
+}
+.responsive-filter header{
+    background-color: var(--orange-bg-filter);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+.responsive-filter header .close-icon{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    display: none;
+}
+.responsive-filter header h2{
+    color: #fff;
+    font-size: 1.4rem;
+}
+.responsive-filter .filter-box{
+    height: 450px;
+    overflow-y: auto;
+    padding: 15px 20px 20px;
+}
+.responsive-filter .chat{
+    display: flex;
+}
+.filter-box p{
+    background-color: var(--orange-bg-filter);
+    border-radius: 10px 10px 0px 10px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 0.95rem;
+    max-width: 75%;
+}
+.filter-box .incoming {
+    margin-top: 7px;
+
+}
+.filter-box .incoming p{
+    background-color: #f2f2f2;
+    color: #000;
+}
+.filter-box .smart-toy{
+    height: 32px;
+    width: 32px;
+    align-self: flex-end;
+    background-color: var(--orange-bg-filter);
+    color: #fff;
+    text-align: center;
+    margin: 0 10px 7px 0;
+    line-height: 32px;
+    border-radius: 4px;
+}
+.filter-box .outgoing{
+    margin: 20px 0;
+    justify-content: flex-end;
+}
+.responsive-filter .chat-input{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    padding: 5px 20px;
+    display: flex;
+    gap: 5px;
+}
+.chat-input textarea{
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    resize: none;
+    padding: 16px 15px 16px 0;
+    width: 100%;
+    height: px;
+}
+#send-btn{
+    color: var(--orange-bg-filter);
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: center;
+    visibility: hidden;
+}
+.chat-input textarea:valid ~ #send-btn{
+    visibility: visible;
+}
+.responsive-filter-toggler{
+    position: fixed;
+    bottom: 20px;
+    right: 35px;
+    background-color: var(--orange-bg-filter);
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.responsive-filter-toggler p{
+    position: absolute;
+    font-size: 1.4rem;
+}
+.responsive-filter-toggler .message-icon{
+    opacity: 1;
+}
+.responsive-filter-toggler .close-icon{
+    opacity: 0;
+}
+.show-responsive-filter .responsive-filter-toggler .message-icon{
+    opacity: 0;
+}
+.show-responsive-filter .responsive-filter-toggler .close-icon{
+    opacity: 1;
+}
+
+/* media-queries */
+
+@media (max-width:490px){
+    .responsive-filter{
+        width: 90%;
+        height: 80%;
+        bottom: 10%;
+        right: 5%;
+        left: 5%;
+        z-index: 1;
+    } 
+    .responsive-filter header{
+        background-color: var(--orange-bg-filter);
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+    }  
+    .responsive-filter-close-icon{
+        cursor: pointer;
+    }
+    .responsive-filter .filter-box{
+        height: 90%;
+    }
+    .responsive-filter header .close-icon{
+        display: block;
+    }
+    .responsive-filter{
+        opacity: 0 !important;
+    }
+    .show-responsive-filter  .responsive-filter{
+        opacity: 1 !important;
+    }
 }

@@ -24,6 +24,7 @@ const EntryLevelRightSideContainer = ({
       <div className="login d-flex align-items-center">
         <div className="container">
           <div className="row">
+          <div className="login-content-container">
             <div className={`${formWidth} mx-auto`}>
               <h4 className={`${formHeaderClassName} `}>{formTitle}</h4>
               {form}
@@ -44,6 +45,7 @@ const EntryLevelRightSideContainer = ({
                   />
                 </Link>
               </div>
+            </div>
             </div>
           </div>
         </div>

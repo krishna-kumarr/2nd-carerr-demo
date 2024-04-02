@@ -5,155 +5,18 @@ import JobCard from "./JobCard";
 import Logo from "../../assets/images/company.png";
 import { FaSave } from "react-icons/fa";
 import { FaShare } from "react-icons/fa6";
+import { Outlet } from "react-router-dom";
 
 const JobWorkSpace = () => {
   return (
     <div className="container-fluid">
       <div className="row mt-1 setting-row-height p-3 overflow-hidden">
 
-        <div className="col-lg-2 col-md-2 d-none d-md-inline h-100 overflow-scroll">
-          <div className="card w-100 border-0 rounded-4 mb-3">
-            <div className="card-body">
-              <JobFilter />
-            </div>
-          </div>
+        <div className="h-100 col-12 col-lg-6 overflow-scroll d-flex">
+          <Outlet/>
         </div>
 
-        <div className="col-lg-4 col-md-4 h-100 overflow-scroll">
-          <div className="d-flex justify-content-between p-2 align-items-center">
-            <div className="col">
-              <label className="filter-results">Showing : 1275 filtered results</label>
-            </div>
-            <div className="col">
-              <select className="form-select border-0 outline-none filter-section" aria-label="Default select example">
-                <option>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="card w-100 mt-2 rounded-4 border-0">
-            <div className="card-body">
-              <JobCard />
-            </div>
-          </div>
-          <div className="w-100 mt-3">
-
-            <nav aria-label="Page navigation example">
-              <ul className="pagination justify-content-center">
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    1
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    2
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    3
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    4
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    5
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    6
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    7
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    8
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    9
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    10
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-
-          </div>
-        </div>
-
-        <div className="d-none d-md-inline col-md-6 col-lg-6 h-100 overflow-scroll">
+        <div className="d-none d-lg-inline col-lg-6 h-100 overflow-scroll">
           <div className="card w-100 border-0 bg-transparent ">
             <div className="card-body p-0 ">
               <div className="col-12 JobDescription-sticky-top-height bg-white rounded-4 mb-2">

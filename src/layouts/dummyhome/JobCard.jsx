@@ -35,10 +35,6 @@ const JobCard = () => {
           <FaWallet className="me-2 text-warning" />
           Paid
         </label>
-        {/* <label className="fs-7">
-          <FaRegCalendarAlt className="me-2 text-primary" />
-          Weekend Only
-        </label> */}
       </div>
       <p className='mt-4 job-card-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, eveniet. Asperiores itaque quisquam exercitationem praesentium laboriosam culpa, ab beatae facere esse. Dolores dicta tempore inventore nobis! Molestiae mollitia laboriosam accusamus eligendi </p>
     </>

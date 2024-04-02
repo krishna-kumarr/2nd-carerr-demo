@@ -14,116 +14,61 @@ import { IoShareSocialSharp } from "react-icons/io5";
 import { RiNotificationBadgeFill } from "react-icons/ri";
 import DashboardNavbar from "../components/Navbar/DashboardNavbar";
 import { VideoJS } from "../components/VideoJS/Video";
+import { LuPlus } from "react-icons/lu";
 
 const Profile = () => {
   const professionalPageDashboardMenu = ["Home", "Learning", "Community"];
-  const [file, setFile] = useState({}); 
-  
-  const handleResumeUpload = (e) =>{
+  const [file, setFile] = useState({});
+
+  const handleResumeUpload = (e) => {
     console.log(e.target.files[0])
   }
   return (
     <>
       <DashboardNavbar
-        profileImage="https://github.com/mdo.png"
+        profileImage="https://bootdey.com/img/Content/avatar/avatar1.png"
         profileName="George Martin"
         dashboadMenus={professionalPageDashboardMenu}
       />
       <section className="profile-bg">
         <div className="container-fluid mb-3">
           <div className="p-2 p-lg-5">
-            <div className="card border-0 shadow-sm rounded-4">
-              <div className="card-body">
-                <div className="row align-items-center">
 
-                  <div className="col-lg-3 border-end">
-                    <div className="text-center">
-                      <img
-                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                        className="img-fluid avatar-xxl rounded-circle"
-                        alt=""
-                        width={150}
-                        height={150}
-                      />
-                    </div>
-                    <div className="p-3 pt-5">
-                      <div className="progress" style={{ height: "1.2rem" }}>
-                        <div
-                          className="progress-bar"
-                          role="progressbar"
-                          style={{ width: "75%", backgroundColor: "lightgreen" }}
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          75%
+            <div className="row g-3">
+
+              <div className="col-lg-3">
+                <div className="card border-0 h-100 rounded-4">
+                  <div className="card-body d-flex align-items-center justify-content-center">
+                    <div className="w-100">
+                      <div className="text-center position-relative">
+                        <img
+                          src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                          className="avatar-xxl rounded-4"
+                          alt=""
+                          width={150}
+                          height={150}
+                        />
+                        <div className="img-upload-plus-icon">
+                          <LuPlus />
                         </div>
                       </div>
-                    </div>
-                  </div>
 
-                  <div className="col-12 col-lg-4">
-                    <table cellPadding="15px" className="w-100 text-start">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <h5 className="text-dark font-size-20 mt-3 mb-2">
-                              Geogrge Martin
-                            </h5>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Date of Birth</td>
-                          <td>
-                            : <span>11/12/1990</span>
-                          </td>
-                        </tr>
+                      <div className="text-center pt-4">
+                        <h5 className="text-dark font-size-20">
+                          Geogrge Martin
+                        </h5>
+                      </div>
 
-                        <tr>
-                          <td>Mail</td>
-                          <td>
-                            : <span>georgemartin@gmail.com</span>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>Phone</td>
-                          <td>
-                            : <span> +1 297 456 895</span>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>Address</td>
-                          <td>
-                            : <span>San franciso, 22201</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className="col-lg-5">
-                    <div className="card border-0">
-                      <div className="card-body ">
-                        <div
-                          className="border rounded-5 py-5"
-                          onClick={() =>
-                            document.getElementById("input-file").click()
-                          }
-                        >
-                          <input
-                            type="file"
-                            className="form-control"
-                            id="input-file"
-                            hidden
-                            accept=".doc, .docx,.pdf, .txt"
-                            onChange={handleResumeUpload}
-                          />
-                          <div className="text-center">
-                            <div className="fs-2">
-                              <LuUpload />
-                            </div>
-                            <p className="px-5 m-0 pt-5">Drag and drop or click here to upload resume</p>
+                      <div className="p-3 pb-0">
+                        <div className="progress" style={{ height: "1.2rem" }}>
+                          <div
+                            className="progress-bar progress-bar-color"
+                            role="progressbar"
+                            style={{ width: "75%"}}
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                            75%
                           </div>
                         </div>
                       </div>
@@ -131,7 +76,87 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
+
+              <div className="col-12 col-lg-5">
+                <div className="card border-0 h-100 rounded-4">
+                  <div className="card-body">
+                    <table cellPadding="15px" className="w-100 text-start">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <label className="profile-side-headers">
+                              <FaUserTie className="me-4 brand-color" />
+                              Personal details
+                            </label>
+                          </td>
+                          <td className="text-end">
+                            <button type="button" className="btn btn-brand-color px-3 me-2">
+                              <TiEdit /> Edit
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Date of Birth</td>
+                          <td>
+                            : <span className="ms-3">11/12/1990</span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Mail</td>
+                          <td>
+                            : <span className="ms-3">georgemartin@gmail.com</span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Phone</td>
+                          <td>
+                            : <span className="ms-3"> +1 297 456 895</span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Address</td>
+                          <td>
+                            : <span className="ms-3">San franciso, 22201</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-4">
+                <div className="card border-0 h-100 rounded-4">
+                  <div className="card-body d-flex align-items-center justify-content-center">
+                    <div
+                      className="border rounded-5 py-5"
+                      onClick={() =>
+                        document.getElementById("input-file").click()
+                      }
+                    >
+                      <input
+                        type="file"
+                        className="form-control"
+                        id="input-file"
+                        hidden
+                        accept=".doc, .docx,.pdf, .txt"
+                        onChange={handleResumeUpload}
+                      />
+                      <div className="text-center">
+                        <div className="fs-2">
+                          <LuUpload />
+                        </div>
+                        <p className="px-5 m-0 pt-5">Drag and drop or click here to upload resume</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
 
             <div className="card mt-3 border-0 shadow-sm rounded-4">
               <div className="card-body">

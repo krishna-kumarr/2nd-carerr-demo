@@ -1,9 +1,11 @@
 import React from "react";
 import Images from "../../utils/images.js";
 import { MdNotificationsActive } from "react-icons/md";
-import { NavLink } from "react-router-dom"; 
+import { NavLink, useNavigate } from "react-router-dom"; 
 
 const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
+  const pageRender = useNavigate();
+
   return (
     <div className="navbar-height">
     <nav className="navbar navbar-light bg-white fixed-top navbar-expand-md shadow-sm p-2 justify-content-center ">
@@ -72,7 +74,7 @@ const DashboardNavbar = ({ dashboadMenus, profileImage, profileName }) => {
                 aria-expanded="false"
               >
                 <img
-                  src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                  src={profileImage}
                   alt="mdo"
                   width="32"
                   height="32"

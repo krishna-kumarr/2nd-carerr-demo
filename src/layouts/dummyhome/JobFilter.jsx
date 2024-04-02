@@ -8,11 +8,11 @@ const JobFilter = () => {
 
   return (
     <form>
-      <div className="d-flex justify-content-between ">
+      <div className="d-flex justify-content-between align-items-center">
       <label htmlFor="skills" className="form-label fs-4 mb-2 job-filter-heading">
           <span>Filter</span>
         </label>
-        <IoFilterSharp />
+        <IoFilterSharp className="fs-5"/>
         </div>  
         <hr className="mb-3 mt-1"/>
       <div className="mb-3">

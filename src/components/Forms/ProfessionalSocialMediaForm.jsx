@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormInput from "../Input/FormInput";
 import Input from "../Input/Input";
 import PhoneInput from "react-phone-input-2";
-import DateComponent from "../Date/DateComponent";
+import DateofBirth from "../Input/DateofBirth";
 const ProfessionalSocialMediaForm = () => {
 
     const [professionalSocialMediaInputValues, setProfessionalSocialMediaInputValues] = useState({
@@ -17,9 +17,6 @@ const ProfessionalSocialMediaForm = () => {
         confirmPassword : ""
     }) 
 
-
-
-
     const professionalSocialMediaInputs = [
       {
         id: 1,
@@ -27,7 +24,7 @@ const ProfessionalSocialMediaForm = () => {
         type: "text",
         placeholder: "FirstName",
         label: "FirstName",
-        errorMessage: "First Name should be 3-30 characters and it shouldn't include special characters",
+        errorMessage: "Min 3-30 characters and avoid symbols",
         required: true,
         pattern: "^[A-Za-z0-9]{3,16}$",
         className: "form-control",
@@ -41,7 +38,7 @@ const ProfessionalSocialMediaForm = () => {
         type: "text",
         placeholder: "Lastname",
         label: "Lastname",
-        errorMessage: "Last Name should be 3-16 characters and it shouldn't include special characters",
+        errorMessage: "Min 3-30 characters and avoid symbols",
         required: true,
         pattern: "^[A-Za-z0-9]{3,16}$",
         className: "form-control",
@@ -54,7 +51,7 @@ const ProfessionalSocialMediaForm = () => {
         type: "email",
         placeholder: "Email",
         label: "Email",
-        errorMessage: "Email should be in correct format",
+        errorMessage: "Please enter a valid email address",
         required: true,
         pattern: "^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$",
         className: "form-control",
@@ -135,7 +132,6 @@ const ProfessionalSocialMediaForm = () => {
             return(
                 <React.Fragment key={professionalSocialMediaInput.id}>
                   {professionalSocialMediaInput.name === "mobileNumber" ? <div className="col-md-6 mt-2 ">
-                    <label className="mb-2">Mobile Number</label>
                     <PhoneInput
                       country={'in'}
                       countryCodeEditable={false}
@@ -150,12 +146,7 @@ const ProfessionalSocialMediaForm = () => {
                 :
                   professionalSocialMediaInput.name === "dateOfBirth" ? 
                     <div className="col-md-6 mt-2  ">
-                      <label className="mb-2">Date of Birth</label>
-                      <DateComponent 
-                         inputProps={{
-                          alt: 'dateOfBirth',
-                        }}
-                        />
+                      <DateofBirth />
                     </div>
                   :
                   <FormInput 
@@ -171,10 +162,8 @@ const ProfessionalSocialMediaForm = () => {
                   dataTestid={professionalSocialMediaInput.dataTestid}
                   role={professionalSocialMediaInput.role}
                   alt={professionalSocialMediaInput.alt} 
-
                   errorMessage={professionalSocialMediaInput.errorMessage}
                 />
-
                   }
 
                 </React.Fragment>

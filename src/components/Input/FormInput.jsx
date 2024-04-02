@@ -12,7 +12,6 @@ const FormInput = ({
   formInputId,
   formAriaLabel,
   handleEyeClick,
-
   nameFromProfessionalSignup,
   onChange,
   pattern,
@@ -24,9 +23,9 @@ const FormInput = ({
   showConfirmPassword
 }) => {
   return (
-    <div className={formInputDivClassName}>
+    <div className={`${formInputDivClassName} user-form-group`}>
       <FormLabel labelFieldName={formFieldName} />
-      <div className={(formFieldName === "Password" || formFieldName === "Confirm Password") ? "input-group" : "input-group d-flex flex-column"}>
+      <div className={(formFieldName === "Password" || formFieldName === "Confirm Password") ? "input-group" : "input-group "}>
         <Input
           type={formInputType}
           className={(formFieldName === "Password" || formFieldName === "Confirm Password") ? "form-control" : "form-control w-100"}
@@ -40,6 +39,7 @@ const FormInput = ({
           role={role}
           alt={alt}
           value={valueFromProfessionalSignup}
+          formFieldName={formFieldName}
 
         />
         {(formFieldName !== "Password" && formFieldName !== "Confirm Password") ?
@@ -48,28 +48,18 @@ const FormInput = ({
             className="text-danger mt-2 signup-error-message professional-signup-error-message"
           >
             {formInputFieldError}
-          </span> : null
-        }
-
-        {(formFieldName === "Password" || formFieldName === "Confirm Password") ? (
-          <React.Fragment className="d-flex flex-column">
+          </span> : <React.Fragment>
             <InputGroup
               className="input-group-text bg-white"
+              formInputFieldError={formInputFieldError}
               id="visibile-icon"
               reIcons={showPassword ?
                 <FaEye className="visible-eye" onClick={handleEyeClick} /> :
                 <FaEyeSlash className="visible-eye" onClick={handleEyeClick} />
               }
             />
-            <span
-              id="signup-error-message"
-              className="text-danger mt-2 signup-error-message professional-signup-error-message"
-            >
-              {formInputFieldError}
-            </span>
           </React.Fragment>
-
-        ) : null}
+        }
       </div>
 
     </div>

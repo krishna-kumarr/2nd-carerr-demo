@@ -12,7 +12,7 @@ const LearningPage = () => {
         <>
             <DashboardNavbar profileImage="https://github.com/mdo.png" profileName="George Martin" dashboadMenus={professionalPageDashboardMenu} />
 
-            <div className="learning-page-height learning-page-bg">
+            <div className="learning-page-height learning-page-bg overflow-scroll">
                 <div className="container pt-5">
                     <div className="row row-cols-1 row-cols-md-3 g-4 mt-0">
                         <div className="col">

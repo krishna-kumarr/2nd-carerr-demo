@@ -10,7 +10,7 @@ const CommunityPage = () => {
         <>
             <DashboardNavbar profileImage="https://github.com/mdo.png" profileName="George Martin" dashboadMenus={professionalPageDashboardMenu} />
 
-            <div className="community-page-height community-page-bg">
+            <div className="community-page-height community-page-bg overflow-scroll">
                 <div className="container pt-5">
                     <div className="row row-cols-1 row-cols-md-3 g-4 mt-0">
                         <div className="col">
