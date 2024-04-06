@@ -6,7 +6,7 @@ import { IoTimeSharp } from "react-icons/io5";
 
 
 
-const JobCard = () => {
+const JobCard = ({ cardType, applicationStatus }) => {
   return (
     <>
       <div className="d-flex align-items-center my-2">
@@ -17,6 +17,55 @@ const JobCard = () => {
           <h6 className='job-card-component-heading'>Data Quality Manager</h6>
           <p className='job-card-posted-time m-0'>Posted on 22 Mar 2024</p>
         </div>
+
+        {/* Applied job cards  */}
+        {
+          cardType === "applied" ?
+            <div className='flex-shrink-0'>
+              <div
+                className={`py-1 px-3 rounded-1 
+                ${applicationStatus === "reviewed" ? 'job-reviewed' : null ||
+                    applicationStatus === "shortlisted" ? 'job-shortlisted' : null ||
+                      applicationStatus === "contacted" ? 'job-contacted' : null ||
+                        applicationStatus === "rejected" ? 'job-rejected' : null
+                  }`
+                }
+              >
+
+                <p className='m-0'>{applicationStatus === "reviewed" ? 'reviewed' : null ||
+                  applicationStatus === "shortlisted" ? 'shortlisted' : null ||
+                    applicationStatus === "contacted" ? 'contacted' : null ||
+                      applicationStatus === "rejected" ? 'Not selected by Employer' : null
+                }</p>
+              </div>
+            </div>
+            :
+            null
+        }
+
+
+        {/* recommended job cards  */}
+        {
+          cardType === "recommended" ?
+            <div className='flex-shrink-0'>
+              <div
+                className={`py-1 px-3 rounded-1 
+                ${applicationStatus === "ai" ? 'job-reviewed' : null ||
+                    applicationStatus === "manual" ? 'job-shortlisted' : null
+                  }`
+                }
+              >
+
+                <p className='m-0'>{applicationStatus === "manual" ? 'Manual Recommendation' : null ||
+                  applicationStatus === "ai" ? 'AI Recommendation' : null
+                }</p>
+              </div>
+            </div>
+            :
+            null
+        }
+
+
       </div>
       <div className="d-flex justify-content-around card-company-details-icon mt-4">
         <label className="fs-7 card-inner-details">
@@ -28,7 +77,7 @@ const JobCard = () => {
           US Time
         </label>
         <label className="fs-7 card-inner-details">
-          <IoTimeSharp className="me-2 text-primary"  />
+          <IoTimeSharp className="me-2 text-primary" />
           Full Time
         </label>
         <label className="fs-7 card-inner-details">

@@ -29,7 +29,7 @@ const FilterMethods = () => {
               className="nav-item navigation-link-active"
               data-testid="All"
             >
-              <NavLink to="/home/all" className="nav-link">
+              <NavLink to='/home/all' className="nav-link">
                 All
               </NavLink>
             </li>
@@ -66,8 +66,7 @@ const FilterMethods = () => {
               testId="searchResult"
               functionOnchange={handleSearchInput}
             />
-
-
+            
           </div>
         </div>
       </div>

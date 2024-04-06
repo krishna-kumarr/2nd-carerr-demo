@@ -20,52 +20,52 @@ const HomeApplied = () => {
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="contacted"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="reviewed"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="shortlisted"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="contacted"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="rejected"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="reviewed"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="contacted"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="shortlisted"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="reviewed"/>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">
                     <div className="card-body">
-                        <JobCard />
+                        <JobCard cardType="applied" applicationStatus="contacted"/>
                     </div>
                 </div>
                 <div className="w-100 mt-3">

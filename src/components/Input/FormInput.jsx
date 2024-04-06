@@ -48,7 +48,9 @@ const FormInput = ({
             className="text-danger mt-2 signup-error-message professional-signup-error-message"
           >
             {formInputFieldError}
-          </span> : <React.Fragment>
+          </span>
+          :
+          <React.Fragment>
             <InputGroup
               className="input-group-text bg-white"
               formInputFieldError={formInputFieldError}

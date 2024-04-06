@@ -1,7 +1,5 @@
 import React from "react";
-import JobFilter from "./JobFilter";
 import JobDescription from "./JobDescription";
-import JobCard from "./JobCard";
 import Logo from "../../assets/images/company.png";
 import { FaSave } from "react-icons/fa";
 import { FaShare } from "react-icons/fa6";
@@ -19,7 +17,7 @@ const JobWorkSpace = () => {
         <div className="d-none d-lg-inline col-lg-6 h-100 overflow-scroll">
           <div className="card w-100 border-0 bg-transparent ">
             <div className="card-body p-0 ">
-              <div className="col-12 JobDescription-sticky-top-height bg-white rounded-4 mb-2">
+              <div className="col-12 JobDescription-sticky-top-height bg-white rounded-4">
                 <div className="d-flex align-items-center my-2">
                   <div className="flex-shrink-0 ms-2">
                     <img src={Logo} alt="..." width={52} height={52} />
@@ -31,7 +29,7 @@ const JobWorkSpace = () => {
                 </div>
                 <div className="d-flex">
                   <div className="me-auto ms-5 p-2">
-                    <button className="btn btn-brand-color text-white ms-3" data-testid="ApplyNow"
+                    <button className="btn btn-brand-color ms-3" data-testid="ApplyNow"
                     >Apply Now</button>
                   </div>
                   <div className="p-2">

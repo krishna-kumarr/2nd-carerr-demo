@@ -1,8 +1,8 @@
 import React from "react";
 
-const FormLabel = ({labelFieldName, lableClassName}) => {
+const FormLabel = ({ labelFieldName, lableClassName, labelHtmlFor }) => {
   return (
-    <label className={lableClassName}>
+    <label htmlFor={labelHtmlFor} className={lableClassName}>
       {labelFieldName} <span className="text-danger"></span>
     </label>
   );

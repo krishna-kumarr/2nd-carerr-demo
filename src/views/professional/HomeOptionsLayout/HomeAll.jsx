@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import JobFilter from '../../../layouts/dummyhome/JobFilter'
 import JobCard from '../../../layouts/dummyhome/JobCard'
 
 const HomeAll = () => {
+    const [filter,setFilter]=useState("")
     return (
         <>
-            <div className="col-lg-4 d-none d-lg-block h-100 overflow-scroll pe-3">
+            <div className="col-lg-4 d-none d-xl-block h-100 overflow-scroll pe-3">
                 <div className="card w-100 border-0 rounded-4">
                     <div className="card-body">
                         <JobFilter />
@@ -13,19 +14,21 @@ const HomeAll = () => {
                 </div>
             </div>
 
-            <div className="col-12 col-lg-8 h-100 overflow-scroll">
+            <div className="col-12 col-xl-8 h-100 overflow-scroll">
                 <div className="d-flex justify-content-between p-2 align-items-center">
                     <div className="col">
                         <label className="filter-results">Showing : 1275 filtered results</label>
                     </div>
-                    <div className="col">
-                        <select className="form-select border-0 outline-none filter-section" aria-label="Default select example">
-                            <option>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-
+                    <div className="col dropdown custom-dropdown">
+                        <button className="btn btn-secondary dropdown-toggle w-100 border-0 outline-none filter-section" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {filter === "" ? "Filter" : filter}
+                        </button>
+                        <ul className="dropdown-menu col" >
+                            <li onClick={() => setFilter("one")}><a className="dropdown-item" >one</a></li>
+                            <li onClick={() => setFilter("two")}><a className="dropdown-item" >two</a></li>
+                            <li onClick={() => setFilter("three")}><a className="dropdown-item" >three</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div className="card w-100 mt-2 rounded-4 border-0">

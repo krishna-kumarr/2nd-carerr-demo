@@ -25,15 +25,16 @@ function App() {
 
       <Route path="/role-selector" element={<RoleSelection/>}/>
       <Route path="/role-selector/professional">
-        <Route index element={<ProfessionalManualSignup />} exact/> 
+        <Route index element={<ProfessionalManualSignup />}/> 
         <Route path="google-signup" element={<ProfessionalSocialMediaSignup />} />
         <Route path="linkedIn-signup" element={<ProfessionalSocialMediaSignup />} />
         <Route path="apple-signup" element={<ProfessionalSocialMediaSignup />} />
       </Route>
 
+      <Route path="home" element={<Home />}/>
 
       <Route path="home" element={<Home />}>
-        <Route path="all" element={<HomeAll/>} exact/>
+        <Route path="all" element={<HomeAll/>}/>
         <Route path="recommended" element={<HomeRecommended />} />
         <Route path="applied" element={<HomeApplied />} />
         <Route path="saved" element={<HomeSaved />} />

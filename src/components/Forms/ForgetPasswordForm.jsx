@@ -73,7 +73,7 @@ const ForgetPasswordForm = () => {
           placeHolder="Email ID"
           ariaLabel="email"
           testId="forgot-email"
-          value="applied123@gmail.com"
+          value="secondcareer123@gmail.com"
           disabled={true}
         />
       </div>
